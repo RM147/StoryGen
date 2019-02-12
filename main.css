@@ -8,16 +8,16 @@
     width: 150px;
 }
 
-  .dropdown:hover .dropbtn {
+.dropdown:hover .dropbtn {
     background-color: #3e8e41;
   }
 
-  .dropdown {
+.dropdown {
     position: relative;
     display: inline-block;
-  }
+}
 
-  .dropdown-content button{
+.dropdown-content button {
     background-color: red;
     color: white;
     padding: 16px;
@@ -26,14 +26,16 @@
     cursor: pointer;
     display: none;
     width: 150px;
-   }
+}
 
-   .dropdown:hover .dropdown-content button{
+   
+
+.dropdown:hover .dropdown-content button{
    display: block;
-  }
+}
 
-  .dropdown-content button:hover{
+.dropdown-content button:hover{
     background-color: orangered;
-  }
+}
 
   
