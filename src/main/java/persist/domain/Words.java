@@ -22,6 +22,16 @@ public class Words {
 	private String word;
 	private String genre;
 	
+	public Words() {
+		
+	}
+	
+	public Words(String word, String type, String genre) {
+		this.word = word;
+		this.type =  type;
+		this.genre = genre;
+	}
+	
 	public String getType() {
 		return type;
 	}
@@ -40,5 +50,5 @@ public class Words {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-		
+			
 }
