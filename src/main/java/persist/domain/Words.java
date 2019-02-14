@@ -12,6 +12,12 @@ public class Words {
 	@Id
 	private Long id;
 	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	private String type;
 	private String word;
 	private String genre;
