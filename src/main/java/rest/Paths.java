@@ -15,5 +15,38 @@ import logic.ServiceImpl;;
 
 @Path("/words")
 public class Paths {
+	
+	@Inject
+	private ServiceImpl service;
+	
+	@Path("/AddWord")
+	@POST
+	@Produces({ "application/json" })
+	public String addMovie(String movie) {
+		return service.createEntry(movie);
+	}
+	
+	@Path("/getAWord/{id}")
+	@GET
+	@Produces({ "application/json" })
+	public String getAllWords() {
+		return service.readEntry();
+	}
+	
+	@Path("/updateWord/{id}")
+	@PUT
+	@Produces({"application/json"})
+	public String updateWord(@PathParam("id") Long id, String account)
+	{
+		return service.updateWord(id, account);
+	}
+	
+	@Path("/deleteWord/{id}")
+	@DELETE
+	@Produces({"application/json"})
+	public String deleteWord(@PathParam("id") Long id)
+	{
+		return service.deleteWord(id);
+	}
 
 }
