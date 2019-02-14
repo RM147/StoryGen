@@ -19,18 +19,18 @@ public class Paths {
 	@Inject
 	private ServiceImpl service;
 	
-	@Path("/AddWord")
+	@Path("/addWord")
 	@POST
 	@Produces({ "application/json" })
 	public String addMovie(String movie) {
-		return service.createEntry(movie);
+		return service.addWord(movie);
 	}
 	
-	@Path("/getAWord/{id}")
+	@Path("/getWord/{id}")
 	@GET
 	@Produces({ "application/json" })
-	public String getAllWords() {
-		return service.readEntry();
+	public String readWord(String word) {
+		return service.readWord(word);
 	}
 	
 	@Path("/updateWord/{id}")

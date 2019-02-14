@@ -1,10 +1,12 @@
 package logic;
 
 public interface ServiceImpl {
-	String createEntry();
-	String readEntry();
-	String updateEntry();
-	String deleteEntry();
-	
+	String addWord(String word);
+
+	String readWord(String word);
+
+	String updateWord(Long id, String genre);
+
+	String deleteWord(Long id);
 
 }

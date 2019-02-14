@@ -20,8 +20,6 @@ import javax.transaction.Transactional;
 
 import org.apache.log4j.Logger;
 
-import com.qa.persistence.domain.Movie;
-
 import logic.Service;
 import persist.domain.Words;
 import util.JSONUtil;
@@ -43,14 +41,14 @@ public class WordDBRepo implements WordRepo {
 
 	@Override
 	@Transactional(REQUIRED)
-	public String createEntry(String word) {
+	public String addWord(String word) {
 		Words aWord = util.getObjectForJSON(word, Words.class);
 		manager.persist(aWord);
 		return aWord.getWord() + " has been added.";
 	}
 
 	@Override
-	public String readEntry(String word) {
+	public String readWord(String word) {
 		Query query = manager.createQuery("Select a FROM Movie a");
 		Collection<Words> movies = (Collection<Words>) query.getResultList();
 
@@ -60,18 +58,22 @@ public class WordDBRepo implements WordRepo {
 	}
 
 	@Override
-	public String updateEntry() {
-		// TODO Auto-generated method stub
-		return null;
+	public String updateWord(Long id, String genre) {
+		if(manager.contains(manager.find(Words.class, id))) {
+			manager.find(Words.class, id).setGenre(genre);
+			return manager.find(Words.class, id).getWord()+ " has been updated.";
+		}
+		return "No such word.";
 	}
 
 	@Override
 	@Transactional(REQUIRED)
-	public String deleteEntry(Long id) {
-		if(manager.contains(manager.find(Words.class, id) {
-			
+	public String deleteWord(Long id) {
+		if(manager.contains(manager.find(Words.class, id))) {
+			manager.remove(manager.find(Words.class, id));
+			return manager.find(Words.class, id).getWord()+ " has been removed.";
 		}
-		return null;
+		return "No such word.";
 	}
 
 }
