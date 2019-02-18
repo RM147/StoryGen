@@ -1,12 +1,29 @@
 package persist.repo;
 
-public interface WordRepo {
-	String addWord(String word);
+public class WordRepo implements RepoInterface{
 
-	String readWord(Long id);
+	@Override
+	public String addWord(String word) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-	String updateWord(Long id, String genre);
+	@Override
+	public String readWord(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-	String deleteWord(Long id);
+	@Override
+	public String updateWord(String genre, Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String deleteWord(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
