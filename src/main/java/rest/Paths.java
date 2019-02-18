@@ -29,8 +29,8 @@ public class Paths {
 	@Path("/getWord/{id}")
 	@GET
 	@Produces({ "application/json" })
-	public String readWord(String word) {
-		return service.readWord(word);
+	public String readWord(Long id) {
+		return service.readWord(id);
 	}
 	
 	@Path("/updateWord/{id}")

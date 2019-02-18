@@ -20,7 +20,7 @@ public class Words {
 		this.id = id;
 	}
 
-	private String type;
+	private String category;
 	private String word;
 	private String genre;
 
@@ -29,16 +29,16 @@ public class Words {
 
 	public Words(String word, String type, String genre) {
 		this.word = word;
-		this.type = type;
+		this.category = type;
 		this.genre = genre;
 	}
 
 	public String getType() {
-		return type;
+		return category;
 	}
 
 	public void setType(String type) {
-		this.type = type;
+		this.category = type;
 	}
 
 	public String getWord() {

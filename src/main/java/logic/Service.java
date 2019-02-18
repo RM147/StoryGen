@@ -19,8 +19,8 @@ public class Service implements ServiceImpl{
 	}
 
 	@Override
-	public String readWord(String word) {
-		return repo.readWord(word);
+	public String readWord(Long id) {
+		return repo.readWord(id);
 	}
 
 	@Override

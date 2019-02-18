@@ -9,6 +9,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import logic.RandomTest;
+import persist.domain.Words;
 
 public class Tests {
 
@@ -25,5 +26,9 @@ public class Tests {
 		assertTrue(r.GenTest());
 		assertEquals("Out of exclusive numbers", r.gen(1, 10));
 	}
-
+	
+	@Test
+	public void getTest() {
+		Words happy = new Words("Happy",);
+	}
 }

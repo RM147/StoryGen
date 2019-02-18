@@ -3,7 +3,7 @@ package persist.repo;
 public interface WordRepo {
 	String addWord(String word);
 
-	String readWord(String word);
+	String readWord(Long id);
 
 	String updateWord(Long id, String genre);
 
