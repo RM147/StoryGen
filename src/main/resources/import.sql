@@ -6,7 +6,7 @@ INSERT INTO WORD (id, word, category, genre) VALUES (5, 'Downtrodden', 'Adjectiv
 INSERT INTO WORD (id, word, category, genre) VALUES (6, 'Charitable', 'Adjective', 'Common')
 INSERT INTO WORD (id, word, category, genre) VALUES (7, 'Evil', 'Adjective', 'Common')
 INSERT INTO WORD (id, word, category, genre) VALUES (8, 'Nefarious', 'Adjective', 'Fantasy')
-INSERT INTO WORD (id, word, category, genre) VALUES (9, 'Edritch', 'Adjective', 'Horror')
+INSERT INTO WORD (id, word, category, genre) VALUES (9, 'Eldritch', 'Adjective', 'Horror')
 INSERT INTO WORD (id, word, category, genre) VALUES (10, 'Corrupt', 'Adjective', 'Common')
 INSERT INTO WORD (id, word, category, genre) VALUES (11, 'Callous', 'Adjective', 'Common')
 INSERT INTO WORD (id, word, category, genre) VALUES (12, 'Cruel', 'Adjective', 'Common')

@@ -12,6 +12,6 @@ public interface ServiceInterface {
 
 	String deleteWord(Long id);
 
-	List genStory();
+	String genStory();
 
 }

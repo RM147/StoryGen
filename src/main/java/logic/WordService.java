@@ -39,7 +39,7 @@ public class WordService implements ServiceInterface {
 	}
 
 	@Override
-	public List genStory() {
+	public String genStory() {
 		return repo.genStory();
 	}
 

@@ -75,10 +75,18 @@ public class WordRepo implements RepoInterface{
 	}
 
 	@Override
-	public List genStory() {
-		Query adj1 = manager.createQuery("Select w.word FROM Word w "
-				+ "WHERE category=\'Adjective\' AND genre=\'fantasy\'ORDER BY rand()");
-		return adj1.setMaxResults(1).getResultList();
+	public String genStory() {
+		Query adj = manager.createQuery("Select w.word FROM Word w WHERE category=\'Adjective\' AND genre=\'Fantasy\' OR genre=\'Common\' "
+				+ "ORDER BY rand()");
+		Query adj1 = manager.createQuery("Select w.word FROM Word w WHERE category=\'Adjective\' AND genre=\'Fantasy\' OR genre=\'Common\' "
+				+ "ORDER BY rand()");
+		Query setting = manager.createQuery("Select w.word FROM Word w WHERE category=\'Setting\' AND genre=\'Fantasy\' OR genre=\'Common\' "
+				+ "ORDER BY rand()");
+		String adj2 = adj.setMaxResults(1).getResultList().toString();
+		String adj3 = adj1.setMaxResults(1).getResultList().toString();
+		String setting1 = setting.setMaxResults(1).getResultList().toString();
+		
+		return "A "+adj2+" [noun] [verb] a "+adj3 +" [noun] in a " +setting1 +".";
 	}
 
 }

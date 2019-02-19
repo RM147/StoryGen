@@ -12,6 +12,6 @@ public interface RepoInterface {
 	
 	String deleteWord(Long id);
 	
-	List genStory();
+	String genStory();
 
 }
