@@ -1,5 +1,7 @@
 package logic;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import persist.repo.RepoInterface;
@@ -34,6 +36,11 @@ public class WordService implements ServiceInterface {
 
 	public void setRepo(RepoInterface repo) {
 		this.repo = repo;
+	}
+
+	@Override
+	public List genStory() {
+		return repo.genStory();
 	}
 
 }

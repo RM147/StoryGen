@@ -1,5 +1,7 @@
 package persist.repo;
 
+import java.util.List;
+
 public interface RepoInterface {
 	
 	String addWord(String word);
@@ -9,5 +11,7 @@ public interface RepoInterface {
 	String updateWord(String genre, Long id);
 	
 	String deleteWord(Long id);
+	
+	List genStory();
 
 }

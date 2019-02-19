@@ -1,5 +1,7 @@
 package logic;
 
+import java.util.List;
+
 public interface ServiceInterface {
 
 	String addWord(String word);
@@ -9,5 +11,7 @@ public interface ServiceInterface {
 	String updateWord(String genre, Long id);
 
 	String deleteWord(Long id);
+
+	List genStory();
 
 }

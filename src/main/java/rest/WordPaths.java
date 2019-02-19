@@ -1,5 +1,7 @@
 package rest;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -24,6 +26,13 @@ public class WordPaths {
 	@Produces({ "application/json" })
 	public String readWord(@PathParam("id") Long id) {
 		return service.readWord(id);
+	}
+	
+	@Path("/storygen")
+	@GET
+	@Produces({ "application/json" })
+	public List genStory() {
+		return service.genStory();
 	}
 
 	@Path("/addWord")
