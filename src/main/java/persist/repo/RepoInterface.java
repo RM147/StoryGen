@@ -1,7 +1,5 @@
 package persist.repo;
 
-import java.util.List;
-
 public interface RepoInterface {
 	
 	String addWord(String word);

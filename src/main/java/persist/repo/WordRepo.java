@@ -92,8 +92,7 @@ public class WordRepo implements RepoInterface{
 		String setting1 = setting.setMaxResults(1).getResultList().toString();
 		String people = person1.setMaxResults(1).getResultList().toString();
 		String people2 = person1.setMaxResults(1).getResultList().toString();
-		
-		return "A "+adj2+" [noun] [verb] a "+adj3 +" [noun] in a " +setting1 +".";
+		return "A "+adj2+" "+people+" "+"[verb]"+" a "+adj3+" "+people2+" in a "+setting1+".";
 	}
 
 }
