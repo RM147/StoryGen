@@ -31,18 +31,16 @@ import okhttp3.ResponseBody;
 
 @Transactional(SUPPORTS)
 @Default
-public class GenRepo implements GenRepoInterface{
-	
-	@PersistenceContext(unitName="primary")
+public class GenRepo implements GenRepoInterface {
+
+	@PersistenceContext(unitName = "primary")
 	private EntityManager manager;
-	
-	@Inject
-	private JSONUtil util;
 
 	@Override
 	public String genAdj() {
-		Query query = manager.createQuery("Select w.word FROM Word w WHERE category=\'Adjective\' AND genre=\'Fantasy\' "
-				+ "OR genre=\'Common\' ORDER BY rand()");
+		Query query = manager
+				.createQuery("Select w.word FROM Word w WHERE category=\'Adjective\' AND genre=\'Fantasy\' "
+						+ "OR genre=\'Common\' ORDER BY rand()");
 		String adj = query.setMaxResults(1).getResultList().toString();
 		return adj;
 	}
@@ -74,7 +72,8 @@ public class GenRepo implements GenRepoInterface{
 	@Override
 	public String genStory() {
 		String str = "A adj noun [verbs] a adj noun in a setting";
-		return "A "+genAdj()+" "+genNoun()+" [verbs] a "+genAdj()+" "+genNoun()+" in a "+genSetting()+".";
+		return "A " + genAdj() + " " + genNoun() + " [verbs] a " + genAdj() + " " + genNoun() + " in a " + genSetting()
+				+ ".";
 	}
 
 }
