@@ -45,7 +45,7 @@ public class WordRepo implements RepoInterface{
 	public String addWord(String word) {
 		Word aWord = util.getObjectForJSON(word, Word.class);
 		manager.persist(aWord);
-		return aWord.getWord() + " has been added";
+		return aWord.getWord() + " has been added.";
 	}
 
 	@Override
@@ -74,25 +74,12 @@ public class WordRepo implements RepoInterface{
 		
 	}
 
-	@Override
-	public String genStory() {
-		Query adj = manager.createQuery("Select w.word FROM Word w WHERE category=\'Adjective\' AND genre=\'Fantasy\' OR genre=\'Common\' "
-				+ "ORDER BY rand()");
-		Query adj1 = manager.createQuery("Select w.word FROM Word w WHERE category=\'Adjective\' AND genre=\'Fantasy\' OR genre=\'Common\' "
-				+ "ORDER BY rand()");
-		Query setting = manager.createQuery("Select w.word FROM Word w WHERE category=\'Setting\' AND genre=\'Fantasy\' OR genre=\'Common\' "
-				+ "ORDER BY rand()");
-		Query person1 = manager.createQuery("Select w.word FROM Word w WHERE category=\'Person\' AND genre=\'Fantasy\' OR genre=\'Common\' "
-				+ "ORDER BY rand()");
-		Query person2 = manager.createQuery("Select w.word FROM Word w WHERE category=\'Person\' AND genre=\'Fantasy\' OR genre=\'Common\' "
-				+ "ORDER BY rand()");
-		
-		String adj2 = adj.setMaxResults(1).getResultList().toString();
-		String adj3 = adj1.setMaxResults(1).getResultList().toString();
-		String setting1 = setting.setMaxResults(1).getResultList().toString();
-		String people = person1.setMaxResults(1).getResultList().toString();
-		String people2 = person1.setMaxResults(1).getResultList().toString();
-		return "A "+adj2+" "+people+" "+"[verb]"+" a "+adj3+" "+people2+" in a "+setting1+".";
+	public void setManager(EntityManager manager) {
+		this.manager = manager;
+	}
+	
+	public void setUtil(JSONUtil util) {
+		this.util = util;
 	}
 
 }

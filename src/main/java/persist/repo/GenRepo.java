@@ -47,16 +47,16 @@ public class GenRepo implements GenRepoInterface {
 
 	@Override
 	public String genNoun() {
-		Query query = manager.createQuery("Select w.word FROM Word w WHERE category=\'Person\' AND genre=\'Fantasy\' "
-				+ "ORDER BY rand()");
+		Query query = manager.createQuery(
+				"Select w.word FROM Word w WHERE category=\'Person\' AND genre=\'Fantasy\' " + "ORDER BY rand()");
 		String noun = query.setMaxResults(1).getResultList().toString();
 		return noun;
 	}
 
 	@Override
 	public String genSetting() {
-		Query query = manager.createQuery("Select w.word FROM Word w WHERE category=\'Setting\' AND genre=\'Fantasy\' "
-				+ "ORDER BY rand()");
+		Query query = manager.createQuery(
+				"Select w.word FROM Word w WHERE category=\'Setting\' AND genre=\'Fantasy\' " + "ORDER BY rand()");
 		String setting = query.setMaxResults(1).getResultList().toString();
 		return setting;
 	}
@@ -70,12 +70,16 @@ public class GenRepo implements GenRepoInterface {
 
 	@Override
 	public String genStory() {
-		String str = "A " + genAdj() + " " + genNoun() + " "+genVerb()+" a " + genAdj() + " " + genNoun() + " in a " + genSetting()
-		+ ".";
-		
+		String str = "A " + genAdj() + " " + genNoun() + " " + genVerb() + " a " + genAdj() + " " + genNoun() + " in a "
+				+ genSetting() + ".";
+
 		str = str.replaceAll("\\[|\\]", "");
-		
+
 		return str;
+	}
+
+	public void setManager(EntityManager manager) {
+		this.manager = manager;
 	}
 
 }

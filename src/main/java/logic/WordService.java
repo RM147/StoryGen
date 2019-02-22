@@ -38,9 +38,6 @@ public class WordService implements ServiceInterface {
 		this.repo = repo;
 	}
 
-	@Override
-	public String genStory() {
-		return repo.genStory();
-	}
+	
 
 }
