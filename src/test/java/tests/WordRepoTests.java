@@ -21,10 +21,6 @@ import org.mockito.runners.MockitoJUnitRunner;
 import persist.repo.WordRepo;
 import util.JSONUtil;
 
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
-
 @RunWith(MockitoJUnitRunner.class)
 public class WordRepoTests {
 	
