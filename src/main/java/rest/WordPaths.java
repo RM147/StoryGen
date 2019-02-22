@@ -13,6 +13,7 @@ import javax.ws.rs.Produces;
 
 import org.apache.log4j.Logger;
 
+import logic.GeneratorInterface;
 import logic.ServiceInterface;
 
 @Path("/word")
@@ -20,6 +21,9 @@ public class WordPaths {
 
 	@Inject
 	private ServiceInterface service;
+	
+	@Inject
+	private GeneratorInterface genservice;
 
 	@Path("/getWord/{id}")
 	@GET
@@ -32,7 +36,7 @@ public class WordPaths {
 	@GET
 	@Produces({ "application/json" })
 	public String genStory() {
-		return service.genStory();
+		return genservice.genStory();
 	}
 
 	@Path("/addWord")
