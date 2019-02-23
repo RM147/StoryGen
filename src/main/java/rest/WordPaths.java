@@ -64,4 +64,9 @@ public class WordPaths {
 		this.service = service;
 	}
 
+	public void setGenservice(GeneratorInterface genservice) {
+		this.genservice = genservice;
+		
+	}
+
 }

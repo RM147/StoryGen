@@ -5,6 +5,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import persist.repo.GenRepoInterface;
+import persist.repo.RepoInterface;
 
 public class GeneratorService implements GeneratorInterface {
 
@@ -34,6 +35,10 @@ public class GeneratorService implements GeneratorInterface {
 	@Override
 	public String genStory() {
 		return repo.genStory();
+	}
+
+	public void setRepo(GenRepoInterface repo) {
+		this.repo = repo;
 	}
 
 }

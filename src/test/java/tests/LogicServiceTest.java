@@ -33,10 +33,9 @@ public class LogicServiceTest {
 	private RepoInterface repo;
 	
 	private static final String MOCK= "test";
-	private static final String MOCK2= "test";
-	
+		
 	@Before
-	public void SetUp() {
+	public void setUp() {
 		service.setRepo(repo);
 	}
 	
