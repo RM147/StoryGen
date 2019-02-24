@@ -25,10 +25,10 @@ function Routing() {
                 <div><button className="Nav"><Link to="/update">Update</Link></button></div>
                 <div><button className="Nav"><Link to="/delete">Delete</Link></button></div>
                 <div className="Output"><Route exact path="/" component={Output} /></div>
-                <div><Route exact path="/create" component={CreatePage} /></div>
+                <div className="Output"><Route exact path="/create" component={CreatePage} /></div>
                 <div className="Output"><Route exact path="/read" component={ReadPage} /></div>
-                <div><Route exact path="/update" component={UpdatePage} /></div>
-                <div><Route exact path="/delete" component={DeletePage} /></div>
+                <div className="Output"><Route exact path="/update" component={UpdatePage} /></div>
+                <div className="Output"><Route exact path="/delete" component={DeletePage} /></div>
             </div>
         </Router>
 

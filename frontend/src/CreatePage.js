@@ -1,10 +1,36 @@
 import React, { Component } from 'react';
 import './App.css';
+import axios from 'axios';
 
 class CreatePage extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            value: '',
+            data: ''
+        };
+    }
+
+    addWord = () => {
+        axios.post(`http://localhost:8080/StoryGen/api/word/addWord`,{
+            
+                "word": "Daemon",
+                "category": "Person",
+                "genre": "Fantasy"            
+        })
+        .then(r => this.setState({ data: r.data }))
+        .catch(e => console.log(e));
+        
+    }
+
     render() {
         return (
-            <p>Create</p>
+            <div>
+            <p>Add your word</p>
+            <button onClick={this.addWord}>Make Word</button>
+            <p>{this.state.data}</p>
+            </div>
 
         );
     }
