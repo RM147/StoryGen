@@ -7,26 +7,25 @@ import CreateButton from './CreateButton';
 import ReadButton from './ReadButton';
 import UpdateButton from './UpdateButton';
 import DeleteButton from './DeleteButton';
+import Output from './Output';
+import Routing from './Router';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class App extends Component {
   render() {
     return (
       <body>
-      <div className='grid-container'>
-      <div className="Banner"><Banner/></div>
-      <div className="Login"><Login/></div>
-      <div><StoryGen/></div>
-      <div><CreateButton/></div>
-      <div><ReadButton/></div>
-      <div><UpdateButton/></div>
-      <div><DeleteButton/></div>
-      <div className="Output">
-      <p></p>
-      <p>A Know It All Dragon Avenges a Rare Farmboy in a Forest of the Witch.</p>
-      </div>
-      </div>
-      <div>Time</div>
+        <div className='grid-container'>
+          <div className="Banner"><Banner/></div>
+          <div className="Login"><Login /></div>
+        </div>
+        
+        <Routing></Routing>
+          
+          
+        
       </body>
+
     );
   }
 }
