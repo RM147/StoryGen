@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-class GETbutton extends Component {
+class Banner extends Component {
   render() {
     return (
-      <p>Hi</p>
+        <p>Rana's Story Generator</p>
       
     );
   }
 }
 
-export default GETbutton;
+export default Banner;

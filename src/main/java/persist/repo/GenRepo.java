@@ -39,8 +39,7 @@ public class GenRepo implements GenRepoInterface {
 	@Override
 	public String genAdj() {
 		Query query = manager
-				.createQuery("Select w.word FROM Word w WHERE category=\'Adjective\' AND genre=\'Fantasy\' "
-						+ "OR category=\'Adjective\' AND genre=\'Common\' ORDER BY rand()");
+				.createQuery("Select w.word FROM Word w WHERE category=\'Adjective\' ORDER BY rand()");
 		String adj = query.setMaxResults(1).getResultList().toString();
 		return adj;
 	}
@@ -48,7 +47,7 @@ public class GenRepo implements GenRepoInterface {
 	@Override
 	public String genNoun() {
 		Query query = manager.createQuery(
-				"Select w.word FROM Word w WHERE category=\'Person\' AND genre=\'Fantasy\' " + "ORDER BY rand()");
+				"Select w.word FROM Word w WHERE category=\'Person\' ORDER BY rand()");
 		String noun = query.setMaxResults(1).getResultList().toString();
 		return noun;
 	}
@@ -56,14 +55,15 @@ public class GenRepo implements GenRepoInterface {
 	@Override
 	public String genSetting() {
 		Query query = manager.createQuery(
-				"Select w.word FROM Word w WHERE category=\'Setting\' AND genre=\'Fantasy\' " + "ORDER BY rand()");
+				"Select w.word FROM Word w WHERE category=\'Setting\' ORDER BY rand()");
 		String setting = query.setMaxResults(1).getResultList().toString();
 		return setting;
 	}
 
 	@Override
 	public String genVerb() {
-		Query query = manager.createQuery("Select w.word FROM Word w WHERE category=\'Verb\' ORDER BY rand()");
+		Query query = manager.createQuery(
+				"Select w.word FROM Word w WHERE category=\'Verb\' ORDER BY rand()");
 		String verb = query.setMaxResults(1).getResultList().toString();
 		return verb;
 	}

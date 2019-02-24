@@ -114,7 +114,7 @@ INSERT INTO WORD(id, word, category, genre) VALUES (113, 'Retaliates Against', '
 INSERT INTO WORD(id, word, category, genre) VALUES (114, 'Escorts', 'Verb', 'Common')
 INSERT INTO WORD(id, word, category, genre) VALUES (115, 'Corrupts', 'Verb', 'Common')
 INSERT INTO WORD(id, word, category, genre) VALUES (116, 'Radicalises', 'Verb', 'Common')
-INSERT INTO WORD(id, word, category, genre) VALUES (117, 'Transforms', 'Verb', 'Common')
+INSERT INTO WORD(id, word, category, genre) VALUES (117, 'Transforms Into', 'Verb', 'Common')
 INSERT INTO WORD(id, word, category, genre) VALUES (118, 'Demolishes', 'Verb', 'Common')
 INSERT INTO WORD(id, word, category, genre) VALUES (119, 'Avenges', 'Verb', 'Common')
 INSERT INTO WORD(id, word, category, genre) VALUES (120, 'Serves', 'Verb', 'Common')
