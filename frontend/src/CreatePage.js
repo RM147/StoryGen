@@ -27,7 +27,7 @@ class CreatePage extends Component {
     render() {
         return (
             <div>
-            <p>Add your word</p>
+            <p>Type your word in the box and pick it's word type and genre from the menus.</p>
             <button onClick={this.addWord}>Make Word</button>
             <p>{this.state.data}</p>
             </div>

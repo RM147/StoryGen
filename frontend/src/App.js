@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import Banner from './Banner';
 import Login from './Login';
-import StoryGen from './StoryGen';
-import CreateButton from './CreateButton';
-import ReadButton from './ReadButton';
-import UpdateButton from './UpdateButton';
-import DeleteButton from './DeleteButton';
-import Output from './Output';
 import Routing from './Router';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 

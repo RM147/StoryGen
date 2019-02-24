@@ -2,13 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import Banner from './Banner';
-import Login from './Login';
-import StoryGen from './StoryGen';
-import CreateButton from './CreateButton';
-import ReadButton from './ReadButton';
-import UpdateButton from './UpdateButton';
-import DeleteButton from './DeleteButton';
 import Output from './Output';
 import CreatePage from './CreatePage';
 import ReadPage from './ReadPage';
