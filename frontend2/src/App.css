@@ -39,6 +39,12 @@
   font-size: 35px;
 }
 
+.Output2{
+  background-color: white;
+  color: black;
+  font-size: 20px;
+}
+
 .dropbtn {
     background-color: rgb(99,0,198);
     color: white;
