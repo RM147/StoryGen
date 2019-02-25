@@ -1,0 +1,44 @@
+.grid-container{
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  background-color: aliceblue;
+  height: 150px;
+  text-align: center;
+  color: rgb(145,200,255);
+}
+.Banner{
+  
+  background-color: rgb(99,0,198);
+  font-size: 40px;
+  text-align: center;
+  color: rgb(145,200,255);
+}
+.Login{  
+  background-color: rgb(99,0,198);
+}
+
+.Nav{
+  float: left;
+  background-color: rgb(198,0,30);
+  width:20%;
+  height: 70px;
+  color: rgb(145,200,255);
+  font-size: 16px;
+}
+
+.Nav:hover{
+  background-color: rgb(198,69,69);
+}
+.Home{
+  background-color: goldenrod;
+}
+
+.Output{
+  background-color: white;
+  color: black;
+  font-size: 35px;
+}
+
+.dropdown-content{
+  display: none;
+}
