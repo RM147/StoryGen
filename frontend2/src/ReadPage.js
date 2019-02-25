@@ -3,8 +3,8 @@ import './App.css';
 import axios from 'axios';
 
 class ReadPage extends Component {
-    
-    constructor(props){
+
+    constructor(props) {
         super(props);
         this.state = {
             value: '',
@@ -13,22 +13,22 @@ class ReadPage extends Component {
     }
 
     changeValue = (e) => {
-        this.setState({value: e.target.value});
-        
+        this.setState({ value: e.target.value });
+
     }
 
     getWord = () => {
         axios.get(`http://localhost:8080/StoryGen/api/word/getWord/${this.state.value}`)
-        .then(r => this.setState({ data: r.data }))
-        .catch(e => console.log(e));
-        
+            .then(r => this.setState({ data: r.data }))
+            .catch(e => console.log(e));
+
     }
-    
+
     render() {
         return (
             <div>
                 <p>Type a number to get a word</p>
-                <input type="text" onChange={this.changeValue}/>
+                <input type="text" onChange={this.changeValue} />
                 <button onClick={this.getWord}>Get Word</button>
                 <p>{this.state.data.word}</p>
             </div>

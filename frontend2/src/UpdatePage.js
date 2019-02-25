@@ -21,7 +21,7 @@ class UpdatePage extends Component {
     updateWord = () => {
         axios.put(`http://localhost:8080/StoryGen/api/word/updateWord/${this.state.value}`,
             {
-                "genre": "Fantasy"
+                "genre": this.state.genre
             })
             .then(r => this.setState({ data: r.data }))
             .catch(e => console.log(e));
@@ -32,18 +32,26 @@ class UpdatePage extends Component {
         this.setState({genre: "Fantasy"})
     }
 
+    makeHorror = () =>{
+        this.setState({genre: "Horror"})
+    }
+
+    makeScifi = () =>{
+        this.setState({genre: "Scifi"})
+    }
+
     render() {
         return (
             <div>
-                <p>Change a word's genre</p>
+                <p>Change a word's genre</p> <p>Genre will be set to: {this.state.genre}</p>
 
-                <div>
-                    <button className="dropper">Set Genre</button>
+                <div className="dropdown">                    
+                    <button className="dropbtn">Set Genre</button>
                     <div class="dropdown-content">
-                        <button onclick={this.makeFantasy}>Fantasy</button>
-                        <button onclick={this.makeHorror}>Horror</button>
-                        <button onclick={this.makeScifi}>Scifi</button>
-                    </div>
+                        <button onClick={this.makeFantasy}>Fantasy</button>
+                        <button onClick={this.makeHorror}>Horror</button>
+                        <button onClick={this.makeScifi}>Scifi</button>
+                    </div>                    
                 </div>
                 <input type="text" onChange={this.changeValue} />
                 <button onClick={this.updateWord}>Get Word</button>

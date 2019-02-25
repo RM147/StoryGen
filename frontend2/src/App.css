@@ -39,6 +39,35 @@
   font-size: 35px;
 }
 
-.dropdown-content{
-  display: none;
+.dropbtn {
+    background-color: rgb(99,0,198);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+  }
+
+.dropdown-content button {
+    background-color: rgb(198,0,30);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    display: none;
+    width: 150px;
+}
+  
+.dropdown:hover .dropdown-content button{
+   display: block;
+}
+
+.dropdown-content button:hover{
+    background-color: orangered;
 }

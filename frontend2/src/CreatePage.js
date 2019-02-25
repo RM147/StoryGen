@@ -28,6 +28,23 @@ class CreatePage extends Component {
         return (
             <div>
             <p>Type your word in the box and pick it's word type and genre from the menus.</p>
+            <div className="dropdown">
+                    <button className="dropbtn">Set Genre</button>
+                    <div class="dropdown-content">
+                        <button onClick={this.makeFantasy}>Fantasy</button>
+                        <button onClick={this.makeHorror}>Horror</button>
+                        <button onClick={this.makeScifi}>Scifi</button>
+                    </div>
+            </div>
+
+            <div className="dropdown">
+                    <button className="dropbtn">Set Genre</button>
+                    <div class="dropdown-content">
+                        <button onClick={this.makeFantasy}>Fantasy</button>
+                        <button onClick={this.makeHorror}>Horror</button>
+                        <button onClick={this.makeScifi}>Scifi</button>
+                    </div>
+            </div>
             <button onClick={this.addWord}>Make Word</button>
             <p>{this.state.data}</p>
             </div>
