@@ -9,7 +9,7 @@ class CreatePage extends Component {
         this.state = {
             value: '',
             data: '',
-            category: "None",
+            category: "Adjective",
             genre: "Common"
         };
     }
@@ -81,11 +81,12 @@ class CreatePage extends Component {
                         <button onClick={this.makeVerb}>Verb</button>
                     </div>
                 </div>
+                <br/>
                 <input type="text" onChange={this.changeValue} />
                 <button onClick={this.addWord}>Make Word</button>
-                <p>Your word will be:</p>
-                <p>Its genre will be:</p>
-                <p>Its category will be:</p>
+                <p>Your word will be: {this.state.value}</p>
+                <p>Its genre will be: {this.state.genre}</p>
+                <p>Its category will be: {this.state.category}</p>
                 <p>{this.state.data}</p>
             </div>
 

@@ -45,6 +45,10 @@
   font-size: 20px;
 }
 
+.dropdown{
+  display: inline-block;
+}
+
 .dropbtn {
     background-color: rgb(99,0,198);
     color: white;
