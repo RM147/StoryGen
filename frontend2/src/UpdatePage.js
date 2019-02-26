@@ -43,7 +43,8 @@ class UpdatePage extends Component {
     render() {
         return (
             <div>
-                <p>Change a word's genre</p> <p>Genre will be set to: {this.state.genre}</p>
+                <p>Change a word's genre</p> 
+                <p>Genre will be set to: {this.state.genre}</p>
 
                 <div className="dropdown">                    
                     <button className="dropbtn">Set Genre</button>
@@ -53,9 +54,11 @@ class UpdatePage extends Component {
                         <button onClick={this.makeScifi}>Scifi</button>
                     </div>                    
                 </div>
+                <div>
                 <input type="text" onChange={this.changeValue} />
                 <button onClick={this.updateWord}>Get Word</button>
                 <p>{this.state.data}</p>
+                </div>
             </div>
 
         );
