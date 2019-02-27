@@ -23,7 +23,7 @@ class UpdatePage extends Component {
             {
                 "genre": this.state.genre
             })
-            .then(r => this.setState({ data: r.data }))
+            .then(r => this.setState({ data: r.data + this.state.genre +"."}))
             .catch(e => console.log(e));
 
     }
