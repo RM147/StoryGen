@@ -73,4 +73,14 @@ public class UserRepo implements UserInterface{
 		}return "No such user.";
 	}
 
+	public void setManager(EntityManager manager) {
+		this.manager = manager;
+		
+	}
+
+	public void setUtil(JSONUtil util) {
+		this.util = util;
+		
+	}
+
 }

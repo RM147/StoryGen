@@ -13,6 +13,7 @@ import javax.ws.rs.Produces;
 
 import org.apache.log4j.Logger;
 
+import logic.UserService;
 import logic.UserServiceInterface;
 
 @Path("/users")
@@ -47,6 +48,11 @@ public class UserPaths {
 	@Produces({ "application/json" })
 	public String deleteUser(@PathParam("id") Long id) {
 		return service.deleteUser(id);
+	}
+
+	public void setService(UserServiceInterface service) {
+		this.service = service;
+		
 	}
 
 }
