@@ -46,7 +46,7 @@ public class UserRepo implements UserInterface{
 	public String addUser(String user) {
 		Users aUser = util.getObjectForJSON(user, Users.class);
 		manager.persist(aUser);
-		return "Hello "+ aUser.getUsername() +"you have an account.";
+		return "Hello "+ aUser.getUsername() +" you have an account.";
 	}
 
 	@Override

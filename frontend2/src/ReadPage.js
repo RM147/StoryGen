@@ -31,6 +31,7 @@ class ReadPage extends Component {
                 <input type="text" onChange={this.changeValue} />
                 <button onClick={this.getWord}>Get Word</button>
                 <p>{this.state.data.word}</p>
+                <p>{this.state.data.genre}</p>
             </div>
 
 
