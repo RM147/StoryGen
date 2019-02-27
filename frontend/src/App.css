@@ -27,7 +27,7 @@
 }
 
 .Nav:hover{
-  background-color: rgb(198,69,69);
+  background-color: rgb(102, 2, 2);
 }
 .Home{
   background-color: goldenrod;
@@ -39,6 +39,49 @@
   font-size: 35px;
 }
 
-.dropdown-content{
-  display: none;
+.Output2{
+  background-color: white;
+  color: black;
+  font-size: 20px;
+}
+
+.dropdown{
+  display: inline-block;
+}
+
+.dropbtn {
+    background-color: rgb(99,0,198);
+    color: rgb(145,200,255);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+  }
+
+.dropdown-content button {
+    background-color: rgb(198,0,30);
+    color: rgb(145,200,255);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    display: none;
+    width: 150px;
+}
+  
+.dropdown:hover .dropdown-content button{
+   display: block;
+}
+
+.dropdown-content button:hover{
+    background-color: rgb(102, 2, 2);
+}
+
+.link {
+  background-color: rgb(102, 2, 2);
 }
