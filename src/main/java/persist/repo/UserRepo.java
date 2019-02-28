@@ -53,6 +53,12 @@ public class UserRepo implements UserInterface{
 	public String readUser(Long id) {
 		return util.getJSONForObject(manager.find(Users.class, id));
 	}
+	
+	public String readUser(Long id, String user, String pass) {
+		Users aUser = (manager.find(Users.class, id)); 
+		if(aUser.getUsername().equals(user)&&aUser.getSecretCode().equals(pass)) {			
+		}return "";
+	}
 
 	@Override
 	@Transactional(REQUIRED)
