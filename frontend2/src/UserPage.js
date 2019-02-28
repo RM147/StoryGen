@@ -17,9 +17,30 @@ class UserPage extends Component {
 
     }
 
-    getWord = () => {
-        axios.get(`http://localhost:8080/StoryGen/api/word/getWord/${this.state.value}`)
+    addUser = () => {
+        axios.post(`http://localhost:8080/StoryGen/api/users/addUser`, {
+            "username": "John",
+            "secretCode": "stuff"
+        }
+        )
             .then(r => this.setState({ data: r.data }))
+            .catch(e => console.log(e));
+
+    }
+
+    getUser = () => {
+        axios.get(`http://localhost:8080/StoryGen/api/word/getWord/1`)
+            .then(r => this.setState({ data: r.data }))
+            .catch(e => console.log(e));
+
+    }
+
+    updateUser = () => {
+        axios.put(`http://localhost:8080/StoryGen/api/word/updateWord/1`,
+            
+                "pass"
+            )
+            .then(r => this.setState({ data: r.data + this.state.genre +"."}))
             .catch(e => console.log(e));
 
     }
@@ -27,11 +48,12 @@ class UserPage extends Component {
     render() {
         return (
             <div>
-                <p>Sign In</p>
+                <p>Sign In</p> <button onClick={this.addUser}>Make User</button>
                 <p>Login</p>
-                <p>See details</p>
-                <p>Update</p>
-                <p>Delete</p>
+                <p>See details</p> <button onClick={this.getUser}>Make User</button>
+                <p>Update</p> <button onClick={this.updateUser}>Update User</button>
+                <p>Delete</p> <button onClick={this.getUser}>Delete User</button>
+                <br/>
                 <input type="text" onChange={this.changeValue} />
                 <button onClick={this.getWord}>Get Word</button>
                 <p>{this.state.data.word}</p>
