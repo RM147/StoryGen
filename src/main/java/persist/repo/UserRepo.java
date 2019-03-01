@@ -51,7 +51,10 @@ public class UserRepo implements UserInterface{
 
 	@Override
 	public String readUser(Long id) {
-		return util.getJSONForObject(manager.find(Users.class, id));
+		if (manager.contains(manager.find(Users.class, id))) {
+			return util.getJSONForObject(manager.find(Users.class, id));
+		}return "No such user.";
+		
 	}
 	
 	public String readUser(Long id, String user, String pass) {
@@ -65,7 +68,7 @@ public class UserRepo implements UserInterface{
 	public String updateUser(String pass, Long id) {
 		if (manager.contains(manager.find(Users.class, id))) {
 			manager.find(Users.class, id).setSecretCode(pass);
-			return manager.find(Users.class,id).getUsername() + "'s password has been changed";
+			return manager.find(Users.class,id).getUsername() + "'s password has been changed.";
 		}return "No such user.";
 	}
 

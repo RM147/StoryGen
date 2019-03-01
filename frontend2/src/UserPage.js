@@ -30,7 +30,7 @@ class UserPage extends Component {
     }
 
     getUser = () => {
-        axios.get(`http://localhost:8080/StoryGen/api/users/getUser/3`)
+        axios.get(`http://localhost:8080/StoryGen/api/users/getUser/8`)
             .then(r => this.setState({ data: r.data }))
             .catch(e => console.log(e));
             console.log(this.state.data);
