@@ -48,7 +48,7 @@ class UpdatePage extends Component {
 
                 <div className="dropdown">                    
                     <button className="dropbtn">Set Genre</button>
-                    <div class="dropdown-content">
+                    <div className="dropdown-content">
                         <button onClick={this.makeFantasy}>Fantasy</button>
                         <button onClick={this.makeHorror}>Horror</button>
                         <button onClick={this.makeScifi}>Scifi</button>

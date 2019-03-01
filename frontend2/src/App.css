@@ -85,3 +85,13 @@
 .link .Nav{
   background-color: rgb(102, 2, 2);
 }
+
+.CRUD{
+    background-color: rgb(198,0,30);
+    color: rgb(145,200,255);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+}

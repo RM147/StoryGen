@@ -25,34 +25,45 @@ class UserPage extends Component {
         )
             .then(r => this.setState({ data: r.data }))
             .catch(e => console.log(e));
+            console.log(this.state.data);
 
     }
 
     getUser = () => {
-        axios.get(`http://localhost:8080/StoryGen/api/word/getWord/1`)
+        axios.get(`http://localhost:8080/StoryGen/api/users/getUser/3`)
             .then(r => this.setState({ data: r.data }))
             .catch(e => console.log(e));
+            console.log(this.state.data);
 
     }
 
     updateUser = () => {
-        axios.put(`http://localhost:8080/StoryGen/api/word/updateWord/1`,
+        axios.put(`http://localhost:8080/StoryGen/api/users/updateUser/3`,
             
                 "pass"
             )
-            .then(r => this.setState({ data: r.data + this.state.genre +"."}))
-            .catch(e => console.log(e));
+            .then(r => this.setState({ data: r.data + "."}))
+            .catch(e => console.error(e));
+            console.log(this.state.data);
 
+    }
+
+    deleteUser = () => {
+        axios.delete(`http://localhost:8080/StoryGen/api/users/deleteUser/3`)
+        .then(r => this.setState({ data: r.data }))
+        .catch(e => console.log(e));
+        console.log(this.state.data);
+        
     }
 
     render() {
         return (
             <div>
-                <p>Sign In</p> <button onClick={this.addUser}>Make User</button>
+                <p>Sign In</p> <button onClick={this.addUser} className="CRUD">Make User</button>
                 <p>Login</p>
-                <p>See details</p> <button onClick={this.getUser}>Make User</button>
-                <p>Update</p> <button onClick={this.updateUser}>Update User</button>
-                <p>Delete</p> <button onClick={this.getUser}>Delete User</button>
+                <p>See details</p> <button onClick={this.getUser} className="CRUD">See User</button>
+                <p>Update</p> <button onClick={this.updateUser} className="CRUD">Update User</button>
+                <p>Delete</p> <button onClick={this.deleteUser} className="CRUD">Delete User</button>
                 <br/>
                 <input type="text" onChange={this.changeValue} />
                 <button onClick={this.getWord}>Get Word</button>
