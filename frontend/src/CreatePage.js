@@ -62,10 +62,11 @@ class CreatePage extends Component {
     render() {
         return (
             <div>
+                <p>Want to add a word?</p>
                 <p>Type your word in the box and pick it's word type and genre from the menus.</p>
                 <div className="dropdown">
                     <button className="dropbtn">Set Genre</button>
-                    <div class="dropdown-content">
+                    <div className="dropdown-content">
                         <button onClick={this.makeFantasy}>Fantasy</button>
                         <button onClick={this.makeHorror}>Horror</button>
                         <button onClick={this.makeScifi}>Scifi</button>
@@ -74,7 +75,7 @@ class CreatePage extends Component {
 
                 <div className="dropdown">
                     <button className="dropbtn">Set Category</button>
-                    <div class="dropdown-content">
+                    <div className="dropdown-content">
                         <button onClick={this.makeAdj}>Adjective</button>
                         <button onClick={this.makePerson}>Person</button>
                         <button onClick={this.makeSetting}>Setting</button>

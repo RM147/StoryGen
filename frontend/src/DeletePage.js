@@ -17,7 +17,7 @@ class DeletePage extends Component {
         
     }
 
-    getWord = () => {
+    deleteWord = () => {
         axios.delete(`http://localhost:8080/StoryGen/api/word/deleteWord/${this.state.value}`)
         .then(r => this.setState({ data: r.data }))
         .catch(e => console.log(e));
@@ -29,7 +29,7 @@ class DeletePage extends Component {
             <div>
                 <p>Type a number to delete a word</p>
                 <input type="text" onChange={this.changeValue}/>
-                <button onClick={this.getWord}>Delete</button>
+                <button onClick={this.deleteWord}>Delete</button>
                 <p>{this.state.data}</p>
                 
             </div>

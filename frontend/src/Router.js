@@ -7,6 +7,7 @@ import CreatePage from './CreatePage';
 import ReadPage from './ReadPage';
 import UpdatePage from './UpdatePage';
 import DeletePage from './DeletePage';
+import UserPage from './UserPage';
 
 function Routing() {
     return (
@@ -22,11 +23,14 @@ function Routing() {
                 Update</button></NavLink></div>
                 <div><NavLink to="/delete" style={{color: 'rgb(145,200,255)',textDecoration: 'none'}} activeClassName="link"><button className="Nav">
                 Delete</button></NavLink></div>
+                <div><NavLink to="/users" style={{color: 'rgb(145,200,255)',textDecoration: 'none'}} activeClassName="link"><button className="Nav">
+                Users</button></NavLink></div>
                 <div className="Output"><Route exact path="/" component={Output} /></div>
                 <div className="Output2"><Route exact path="/create" component={CreatePage} /></div>
                 <div className="Output2"><Route exact path="/read" component={ReadPage} /></div>
                 <div className="Output2"><Route exact path="/update" component={UpdatePage} /></div>
                 <div className="Output2"><Route exact path="/delete" component={DeletePage} /></div>
+                <div className="Output2"><Route exact path="/users" component={UserPage} /></div>
             </div>
         </Router>
 
