@@ -9,5 +9,7 @@ public interface UserServiceInterface {
 	String updateUser(String pass, Long id);
 
 	String deleteUser(Long id);
+	
+	String login(String user, String pass);
 
 }

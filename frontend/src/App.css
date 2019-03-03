@@ -102,9 +102,10 @@ tr {
 }
 
 tr:nth-child(3){
-  height: 500px;
+  height: 200px;
 }
 
 td{
   text-align: center;
 }
+

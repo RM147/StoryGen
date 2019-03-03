@@ -9,7 +9,9 @@ class UserPage extends Component {
         this.state = {
             user: '',
             pass: '',
-            data: ''
+            data: '',
+            data2: '',
+            id: 1
         };
     }
 
@@ -24,6 +26,9 @@ class UserPage extends Component {
     }
 
     addUser = () => {
+
+        this.state.id++;
+
         axios.post(`http://localhost:8080/StoryGen/api/users/addUser`, {
             "username": this.state.user,
             "secretCode": this.state.pass
@@ -31,34 +36,35 @@ class UserPage extends Component {
         )
             .then(r => this.setState({ data: r.data }))
             .catch(e => console.log(e));
-        console.log(this.state.data);
+            
+        
 
     }
 
     getUser = () => {
-        axios.get(`http://localhost:8080/StoryGen/api/users/getUser/1`)
-            .then(r => this.setState({ data: r.data }))
+        axios.get(`http://localhost:8080/StoryGen/api/users/getUser/${this.state.id}`)
+            .then(r => this.setState({ data2: r.data }))
             .catch(e => console.log(e));
-        console.log(this.state.data.username);
+        
 
     }
 
     updateUser = () => {
-        axios.put(`http://localhost:8080/StoryGen/api/users/updateUser/3`,
+        axios.put(`http://localhost:8080/StoryGen/api/users/updateUser/${this.state.id}`,
 
             "pass"
         )
             .then(r => this.setState({ data: r.data }))
             .catch(e => console.error(e));
-        console.log(this.state.data);
+        
 
     }
 
     deleteUser = () => {
-        axios.delete(`http://localhost:8080/StoryGen/api/users/deleteUser/3`)
+        axios.delete(`http://localhost:8080/StoryGen/api/users/deleteUser/${this.state.id}`)
             .then(r => this.setState({ data: r.data }))
             .catch(e => console.log(e));
-        console.log(this.state.data);
+        
 
     }
 
@@ -90,10 +96,12 @@ class UserPage extends Component {
 
                     </tr>
                     <tr>
-                        <td colSpan="6"><input type="text" onChange={this.changeValue} />
-                            <button onClick={this.getWord}>Get Word</button>
-                            <p>{this.state.user}</p>
-                            <p>{this.state.pass}</p></td>
+                        <td colSpan="6">
+                            <p>{this.state.id}</p>
+                            <p>{this.state.pass}</p>
+                            <p>{this.state.data}</p>
+                            <p>{this.state.data2.username}</p>
+                            <p>{this.state.data2.secretCode}</p></td>
 
                     </tr>
                     </tbody>

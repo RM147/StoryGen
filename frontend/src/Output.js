@@ -12,6 +12,10 @@ class Output extends Component {
         };
     }
 
+    makeAll = () => {
+        this.setState({ genre: "All" })
+    }
+    
     makeFantasy = () => {
         this.setState({ genre: "Fantasy" })
     }
@@ -28,7 +32,7 @@ class Output extends Component {
         axios.get(`http://localhost:8080/StoryGen/api/word/storygen/${this.state.genre}`)
             .then(r => this.setState({ value: r.data }))
             .catch(e => console.log(e));
-        console.log(this.state.value);
+        
     }
 
     render() {
@@ -41,13 +45,14 @@ class Output extends Component {
                 <div className="dropdown">
                     <button className="dropbtn">Set Genre</button>
                     <div className="dropdown-content">
+                    <button onClick={this.makeAll}>All</button>
                         <button onClick={this.makeFantasy}>Fantasy</button>
                         <button onClick={this.makeHorror}>Horror</button>
                         <button onClick={this.makeScifi}>Scifi</button>
                     </div>
                 </div>
 
-                <p>Genre will be {this.state.genre}</p>
+                <p className="Output2">Genre: {this.state.genre}</p>
             </div>
 
 
