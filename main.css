@@ -26,9 +26,7 @@
     cursor: pointer;
     display: none;
     width: 150px;
-}
-
-   
+}   
 
 .dropdown:hover .dropdown-content button{
    display: block;

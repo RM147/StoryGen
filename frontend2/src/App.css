@@ -1,0 +1,97 @@
+.grid-container{
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  background-color: aliceblue;
+  height: 150px;
+  text-align: center;
+  color: rgb(145,200,255);
+}
+.Banner{
+  
+  background-color: rgb(99,0,198);
+  font-size: 40px;
+  text-align: center;
+  color: rgb(145,200,255);
+}
+.Login{  
+  background-color: rgb(99,0,198);
+}
+
+.Nav{
+  float: left;
+  background-color: rgb(198,0,30);
+  width:16.65%;
+  height: 70px;
+  color: rgb(145,200,255);
+  font-size: 16px;
+}
+
+.Nav:hover{
+  background-color: rgb(102, 2, 2);
+}
+.Home{
+  background-color: goldenrod;
+}
+
+.Output{
+  background-color: white;
+  color: black;
+  font-size: 35px;
+}
+
+.Output2{
+  background-color: white;
+  color: black;
+  font-size: 20px;
+}
+
+.dropdown{
+  display: inline-block;
+}
+
+.dropbtn {
+    background-color: rgb(99,0,198);
+    color: rgb(145,200,255);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+  }
+
+.dropdown-content button {
+    background-color: rgb(198,0,30);
+    color: rgb(145,200,255);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    display: none;
+    width: 150px;
+}
+  
+.dropdown:hover .dropdown-content button{
+   display: block;
+}
+
+.dropdown-content button:hover{
+    background-color: rgb(102, 2, 2);
+}
+
+.link .Nav{
+  background-color: rgb(102, 2, 2);
+}
+
+.CRUD{
+    background-color: rgb(198,0,30);
+    color: rgb(145,200,255);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+}

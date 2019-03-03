@@ -23,7 +23,10 @@ class Output extends Component {
         <div>
             <p>{this.state.value}</p>
             <button onClick={this.genStory}>Gen Story</button>
+            
         </div>
+
+        
         
       
     );
