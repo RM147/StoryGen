@@ -1,6 +1,5 @@
 package persist.repo;
 
-
 import static javax.transaction.Transactional.TxType.REQUIRED;
 import static javax.transaction.Transactional.TxType.SUPPORTS;
 
@@ -33,11 +32,11 @@ import okhttp3.ResponseBody;
 
 @Transactional(SUPPORTS)
 @Default
-public class UserRepo implements UserInterface{
-	
-	@PersistenceContext(unitName="primary")
+public class UserRepo implements UserInterface {
+
+	@PersistenceContext(unitName = "primary")
 	private EntityManager manager;
-	
+
 	@Inject
 	private JSONUtil util;
 
@@ -46,21 +45,20 @@ public class UserRepo implements UserInterface{
 	public String addUser(String user) {
 		Users aUser = util.getObjectForJSON(user, Users.class);
 		manager.persist(aUser);
-		return "Hello "+ aUser.getUsername() +" you have an account.";
+		return "Hello " + aUser.getUsername() + " you have an account.";
 	}
 
 	@Override
 	public String readUser(Long id) {
-		if (manager.contains(manager.find(Users.class, id))) {
-			return util.getJSONForObject(manager.find(Users.class, id));
-		}return "No such user.";
-		
+		return util.getJSONForObject(manager.find(Users.class, id));
+
 	}
-	
+
 	public String readUser(Long id, String user, String pass) {
-		Users aUser = (manager.find(Users.class, id)); 
-		if(aUser.getUsername().equals(user)&&aUser.getSecretCode().equals(pass)) {			
-		}return "";
+		Users aUser = (manager.find(Users.class, id));
+		if (aUser.getUsername().equals(user) && aUser.getSecretCode().equals(pass)) {
+		}
+		return "Success";
 	}
 
 	@Override
@@ -68,28 +66,30 @@ public class UserRepo implements UserInterface{
 	public String updateUser(String pass, Long id) {
 		if (manager.contains(manager.find(Users.class, id))) {
 			manager.find(Users.class, id).setSecretCode(pass);
-			return manager.find(Users.class,id).getUsername() + "'s password has been changed.";
-		}return "No such user.";
+			return manager.find(Users.class, id).getUsername() + "'s password has been changed.";
+		}
+		return "No such user.";
 	}
 
 	@Override
 	@Transactional(REQUIRED)
 	public String deleteUser(Long id) {
-		if (manager.contains(manager.find(Users.class, id))){
-			String str = manager.find(Users.class,id).getUsername() + " successfully deleted.";
+		if (manager.contains(manager.find(Users.class, id))) {
+			String str = manager.find(Users.class, id).getUsername() + " successfully deleted.";
 			manager.remove(manager.find(Users.class, id));
 			return str;
-		}return "No such user.";
+		}
+		return "No such user.";
 	}
 
 	public void setManager(EntityManager manager) {
 		this.manager = manager;
-		
+
 	}
 
 	public void setUtil(JSONUtil util) {
 		this.util = util;
-		
+
 	}
 
 }

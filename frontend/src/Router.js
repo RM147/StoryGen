@@ -24,7 +24,7 @@ function Routing() {
                 <div><NavLink to="/delete" style={{color: 'rgb(145,200,255)',textDecoration: 'none'}} activeClassName="link"><button className="Nav">
                 Delete</button></NavLink></div>
                 <div><NavLink to="/users" style={{color: 'rgb(145,200,255)',textDecoration: 'none'}} activeClassName="link"><button className="Nav">
-                Users</button></NavLink></div>
+                Users</button></NavLink></div>               
                 <div className="Output"><Route exact path="/" component={Output} /></div>
                 <div className="Output2"><Route exact path="/create" component={CreatePage} /></div>
                 <div className="Output2"><Route exact path="/read" component={ReadPage} /></div>
