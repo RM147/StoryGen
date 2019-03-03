@@ -35,8 +35,8 @@ public class WordPaths {
 	@Path("/storygen")
 	@GET
 	@Produces({ "application/json" })
-	public String genStory() {
-		return genservice.genStory();
+	public String genStory(String genre) {
+		return genservice.genStory(genre);
 	}
 
 	@Path("/addWord")

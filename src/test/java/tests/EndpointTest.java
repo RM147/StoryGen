@@ -63,7 +63,7 @@ public class EndpointTest {
 	
 	@Test
 	public void testGenStory() {
-		Mockito.when(genservice.genStory()).thenReturn(MOCK);
-		assertEquals(MOCK,genservice.genStory());
+		Mockito.when(genservice.genStory("")).thenReturn(MOCK);
+		assertEquals(MOCK,genservice.genStory(""));
 	}
 }

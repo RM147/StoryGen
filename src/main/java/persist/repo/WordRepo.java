@@ -29,17 +29,16 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 
-
 @Transactional(SUPPORTS)
 @Default
-public class WordRepo implements RepoInterface{
+public class WordRepo implements RepoInterface {
 
 	@PersistenceContext(unitName = "primary")
 	private EntityManager manager;
-	
+
 	@Inject
 	private JSONUtil util;
-	
+
 	@Override
 	@Transactional(REQUIRED)
 	public String addWord(String word) {
@@ -58,26 +57,28 @@ public class WordRepo implements RepoInterface{
 	public String updateWord(String genre, Long id) {
 		if (manager.contains(manager.find(Word.class, id))) {
 			manager.find(Word.class, id).setGenre(genre);
-			return manager.find(Word.class,id).getWord() + "'s genre has been changed to ";
-		}return "No such word.";
-			
+			return manager.find(Word.class, id).getWord() + "'s genre has been changed to ";
+		}
+		return "No such word.";
+
 	}
 
 	@Override
 	@Transactional(REQUIRED)
 	public String deleteWord(Long id) {
-		if (manager.contains(manager.find(Word.class, id))){
-			String str = manager.find(Word.class,id).getWord() + " successfully deleted.";
+		if (manager.contains(manager.find(Word.class, id))) {
+			String str = manager.find(Word.class, id).getWord() + " successfully deleted.";
 			manager.remove(manager.find(Word.class, id));
 			return str;
-		}return "No such word.";
-		
+		}
+		return "No such word.";
+
 	}
 
 	public void setManager(EntityManager manager) {
 		this.manager = manager;
 	}
-	
+
 	public void setUtil(JSONUtil util) {
 		this.util = util;
 	}

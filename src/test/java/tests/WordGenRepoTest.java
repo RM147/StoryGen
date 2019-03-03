@@ -97,7 +97,7 @@ public class WordGenRepoTest {
 		Mockito.when(query.setMaxResults(1)).thenReturn(query);
 		Mockito.when(query.getResultList()).thenReturn(adj);
 		Mockito.when(query.toString()).thenReturn("word");
-		assertEquals("A word word word a word word in a word.",repo.genStory());
+		assertEquals("A word word word a word word in a word.",repo.genStory(""));
 	}
 
 }

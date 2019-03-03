@@ -43,21 +43,49 @@ public class GenRepo implements GenRepoInterface {
 		String adj = query.setMaxResults(1).getResultList().toString();
 		return adj;
 	}
-
-	@Override
+	
 	public String genNoun() {
-		Query query = manager.createQuery(
-				"Select w.word FROM Word w WHERE category=\'Person\' ORDER BY rand()");
+		Query query = manager
+				.createQuery("Select w.word FROM Word w WHERE category=\'Person\' ORDER BY rand()");
+		String noun = query.setMaxResults(1).getResultList().toString();
+		return noun;
+	}
+	
+	@Override
+	public String genNoun(String genre) {
+		if(genre.equals("All")) {
+			Query query = manager
+					.createQuery("Select w.word FROM Word w WHERE category=\'Person\' ORDER BY rand()");
+			String noun = query.setMaxResults(1).getResultList().toString();
+			return noun;
+		}
+		String adder = "AND genre=\'"+genre+"\'";
+		Query query = manager
+				.createQuery("Select w.word FROM Word w WHERE category=\'Person\' "+adder+" ORDER BY rand()");
 		String noun = query.setMaxResults(1).getResultList().toString();
 		return noun;
 	}
 
-	@Override
 	public String genSetting() {
 		Query query = manager.createQuery(
 				"Select w.word FROM Word w WHERE category=\'Setting\' ORDER BY rand()");
 		String setting = query.setMaxResults(1).getResultList().toString();
 		return setting;
+	}
+	
+	@Override
+	public String genSetting(String genre) {
+		if(genre.equals("All")) {
+			Query query = manager
+					.createQuery("Select w.word FROM Word w WHERE category=\'Setting\' ORDER BY rand()");
+			String noun = query.setMaxResults(1).getResultList().toString();
+			return noun;
+		}
+		String adder = "AND genre=\'"+genre+"\'";
+		Query query = manager
+				.createQuery("Select w.word FROM Word w WHERE category=\'Setting\' "+adder+" ORDER BY rand()");
+		String noun = query.setMaxResults(1).getResultList().toString();
+		return noun;
 	}
 
 	@Override
@@ -69,9 +97,9 @@ public class GenRepo implements GenRepoInterface {
 	}
 
 	@Override
-	public String genStory() {
-		String str = "A " + genAdj() + " " + genNoun() + " " + genVerb() + " a " + genAdj() + " " + genNoun() + " in a "
-				+ genSetting() + ".";
+	public String genStory(String genre) {
+		String str = "A " + genAdj() + " " + genNoun(genre) + " " + genVerb() + " a " + genAdj() + " " + genNoun(genre) + " in a "
+				+ genSetting(genre) + ".";
 
 		str = str.replaceAll("\\[|\\]", "");
 
@@ -81,5 +109,7 @@ public class GenRepo implements GenRepoInterface {
 	public void setManager(EntityManager manager) {
 		this.manager = manager;
 	}
+
+	
 
 }
