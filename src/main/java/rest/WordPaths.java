@@ -32,10 +32,10 @@ public class WordPaths {
 		return service.readWord(id);
 	}
 	
-	@Path("/storygen")
+	@Path("/storygen/{genre}")
 	@GET
 	@Produces({ "application/json" })
-	public String genStory(String genre) {
+	public String genStory(@PathParam("genre") String genre) {
 		return genservice.genStory(genre);
 	}
 

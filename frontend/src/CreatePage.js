@@ -62,6 +62,7 @@ class CreatePage extends Component {
     render() {
         return (
             <div>
+                <table></table>
                 <p>Want to add a word?</p>
                 <p>Type your word in the box and pick it's word type and genre from the menus.</p>
                 <div className="dropdown">

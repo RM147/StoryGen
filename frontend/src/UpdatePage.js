@@ -43,6 +43,7 @@ class UpdatePage extends Component {
     render() {
         return (
             <div>
+                <table></table>
                 <p>Change a word's genre</p> 
                 <p>Genre will be set to: {this.state.genre}</p>
 

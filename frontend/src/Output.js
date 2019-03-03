@@ -25,7 +25,7 @@ class Output extends Component {
     }
 
     genStory = () => {
-        axios.get(`http://localhost:8080/StoryGen/api/word/storygen`, this.state.genre)
+        axios.get(`http://localhost:8080/StoryGen/api/word/storygen/${this.state.genre}`)
             .then(r => this.setState({ value: r.data }))
             .catch(e => console.log(e));
         console.log(this.state.value);
@@ -34,6 +34,7 @@ class Output extends Component {
     render() {
         return (
             <div>
+                <table></table>
                 <p>{this.state.value}</p>
                 <button onClick={this.genStory}>Gen Story</button>
 

@@ -54,10 +54,10 @@ public class UserRepo implements UserInterface {
 
 	}
 
-	public String readUser(Long id, String user, String pass) {
-		Users aUser = (manager.find(Users.class, id));
-		if (aUser.getUsername().equals(user) && aUser.getSecretCode().equals(pass)) {
-		}
+	public String login(Long id, String user, String pass) {
+		
+		Query query = manager
+				.createQuery("Select * FROM Users w WHERE username=\'"+user+"\' AND secretCode=\'"+pass+" ORDER BY rand()");
 		return "Success";
 	}
 
