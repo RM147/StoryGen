@@ -39,7 +39,7 @@
 .Output2{
   background-color: white;
   color: black;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .dropdown{
@@ -54,6 +54,10 @@
     border: none;
     cursor: pointer;
     width: 150px;
+}
+
+.dropbtn:hover {
+  background-color: #3e8e41;
 }
 
 .dropdown:hover .dropbtn {
@@ -107,5 +111,18 @@ tr:nth-child(3){
 
 td{
   text-align: center;
+  vertical-align: top;
+}
+
+.create1 {
+  height: 270px;
+}
+
+.out1 {
+  width: 100%;
+}
+
+.out2 {
+  width: 30%;
 }
 

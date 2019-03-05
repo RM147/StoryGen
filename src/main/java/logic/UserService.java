@@ -18,10 +18,10 @@ public class UserService implements UserServiceInterface{
 
 	@Override
 	public String readUser(Long id) {
-		if(repo.readUser(id).equals(null)) {
-			return "No such word.";
-		}
-		return repo.readUser(id);
+		if(repo.readUser(id) != null) {
+			return repo.readUser(id);
+		}		
+		return "No such word.";
 	}
 	
 	@Override

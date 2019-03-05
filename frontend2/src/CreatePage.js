@@ -64,7 +64,7 @@ class CreatePage extends Component {
             <div>
                 <table>
                     <tbody>
-                        <tr>
+                        <tr className="create1">
                             <td><p>Want to add a word?</p></td>
                             <td>
                                 <div className="dropdown">
@@ -100,7 +100,7 @@ class CreatePage extends Component {
                         </tr>
                         <tr>
                             <input type="text" onChange={this.changeValue} />
-                            <button onClick={this.addWord}>Make Word</button>
+                            <button className="dropbtn" onClick={this.addWord}>Make Word</button>
                         </tr>
                     </tbody>
                 </table>
