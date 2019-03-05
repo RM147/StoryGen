@@ -20,7 +20,7 @@
 .Nav{
   float: left;
   background-color: rgb(198,0,30);
-  width:16.65%;
+  width: 16.65%;
   height: 70px;
   color: rgb(145,200,255);
   font-size: 16px;
@@ -28,9 +28,6 @@
 
 .Nav:hover{
   background-color: rgb(102, 2, 2);
-}
-.Home{
-  background-color: goldenrod;
 }
 
 .Output{
@@ -95,3 +92,20 @@
     cursor: pointer;
     width: 150px;
 }
+
+.users {
+  width: 100%;
+}
+
+.users1 {
+  height: 200px;
+}
+
+tr:nth-child(3){
+  height: 200px;
+}
+
+td{
+  text-align: center;
+}
+

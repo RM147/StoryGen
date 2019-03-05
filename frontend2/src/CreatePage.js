@@ -62,32 +62,54 @@ class CreatePage extends Component {
     render() {
         return (
             <div>
-                <p>Type your word in the box and pick it's word type and genre from the menus.</p>
-                <div className="dropdown">
-                    <button className="dropbtn">Set Genre</button>
-                    <div className="dropdown-content">
-                        <button onClick={this.makeFantasy}>Fantasy</button>
-                        <button onClick={this.makeHorror}>Horror</button>
-                        <button onClick={this.makeScifi}>Scifi</button>
-                    </div>
-                </div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><p>Want to add a word?</p></td>
+                            <td>
+                                <div className="dropdown">
+                                    <button className="dropbtn">Set Genre</button>
+                                    <div className="dropdown-content">
+                                        <button onClick={this.makeFantasy}>Fantasy</button>
+                                        <button onClick={this.makeHorror}>Horror</button>
+                                        <button onClick={this.makeScifi}>Scifi</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div className="dropdown">
+                                    <button className="dropbtn">Set Category</button>
+                                    <div className="dropdown-content">
+                                        <button onClick={this.makeAdj}>Adjective</button>
+                                        <button onClick={this.makePerson}>Person</button>
+                                        <button onClick={this.makeSetting}>Setting</button>
+                                        <button onClick={this.makeVerb}>Verb</button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            
+                            <td>
 
-                <div className="dropdown">
-                    <button className="dropbtn">Set Category</button>
-                    <div className="dropdown-content">
-                        <button onClick={this.makeAdj}>Adjective</button>
-                        <button onClick={this.makePerson}>Person</button>
-                        <button onClick={this.makeSetting}>Setting</button>
-                        <button onClick={this.makeVerb}>Verb</button>
-                    </div>
-                </div>
-                <br/>
-                <input type="text" onChange={this.changeValue} />
-                <button onClick={this.addWord}>Make Word</button>
-                <p>Your word will be: {this.state.value}</p>
-                <p>Its genre will be: {this.state.genre}</p>
-                <p>Its category will be: {this.state.category}</p>
-                <p>{this.state.data}</p>
+                                <p>Your word will be: {this.state.value}</p>
+                                <p>Its genre will be: {this.state.genre}</p>
+                                <p>Its category will be: {this.state.category}</p>
+                                <p>{this.state.data}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <input type="text" onChange={this.changeValue} />
+                            <button onClick={this.addWord}>Make Word</button>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+
+
+
+
             </div>
 
         );
