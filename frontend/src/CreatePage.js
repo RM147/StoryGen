@@ -65,9 +65,7 @@ class CreatePage extends Component {
                 <table>
                     <tbody>
                         <tr>
-                            <p>Want to add a word?</p>
-                        </tr>
-                        <tr>
+                            <td><p>Want to add a word?</p></td>
                             <td>
                                 <div className="dropdown">
                                     <button className="dropbtn">Set Genre</button>
@@ -89,6 +87,9 @@ class CreatePage extends Component {
                                     </div>
                                 </div>
                             </td>
+                        </tr>
+                        <tr>
+                            
                             <td>
 
                                 <p>Your word will be: {this.state.value}</p>

@@ -93,12 +93,12 @@
     width: 150px;
 }
 
-table {
+.users {
   width: 100%;
 }
 
-tr {
-  height: 100px;
+.users1 {
+  height: 200px;
 }
 
 tr:nth-child(3){

@@ -71,9 +71,9 @@ class UserPage extends Component {
     render() {
         return (
             <div>
-                <table>
+                <table className="users">
                     <tbody>
-                    <tr>
+                    <tr className="users1">
                         <td colSpan="3">
                             <div><label htmlFor="name">Username: </label>
                                 <input id="name" type="text" onChange={this.changeUser} /></div>
@@ -89,13 +89,13 @@ class UserPage extends Component {
                             <button onClick={this.addUser} className="CRUD">Login</button></td>
 
                     </tr>
-                    <tr>
+                    <tr className="users1">
                         <td colSpan="2"><button onClick={this.getUser} className="CRUD">See Details</button></td>
                         <td colSpan="2"><button onClick={this.updateUser} className="CRUD">Update User</button></td>
                         <td colSpan="2"><button onClick={this.deleteUser} className="CRUD">Delete User</button></td>
 
                     </tr>
-                    <tr>
+                    <tr className="users1">
                         <td colSpan="6">
                             <p>{this.state.id}</p>
                             <p>{this.state.pass}</p>
