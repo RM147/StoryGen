@@ -29,8 +29,8 @@ class DeletePage extends Component {
             <div>
                 <table></table>
                 <p>Type a number to delete a word</p>
-                <input type="text" onChange={this.changeValue}/>
-                <button onClick={this.deleteWord}>Delete</button>
+                <input className="input" type="text" onChange={this.changeValue}/>
+                <button className="dropbtn" onClick={this.deleteWord}>Delete</button>
                 <p>{this.state.data}</p>
                 
             </div>

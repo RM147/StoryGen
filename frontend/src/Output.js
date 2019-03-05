@@ -38,9 +38,17 @@ class Output extends Component {
     render() {
         return (
             <div>
-                <table></table>
-                <p>{this.state.value}</p>
-                <button onClick={this.genStory}>Gen Story</button>
+                <table className="out1">
+                    <tbody>
+                    <tr>
+                        <td><p>{this.state.value}</p></td>
+                        <td className="out2"><p className="Output2">Genre: {this.state.genre}</p></td>
+                    </tr>
+                    </tbody>
+                </table>
+                
+                <button className="dropbtn" onClick={this.genStory}>Gen Story</button>
+                <br/>
 
                 <div className="dropdown">
                     <button className="dropbtn">Set Genre</button>
@@ -52,7 +60,7 @@ class Output extends Component {
                     </div>
                 </div>
 
-                <p className="Output2">Genre: {this.state.genre}</p>
+                
             </div>
 
 

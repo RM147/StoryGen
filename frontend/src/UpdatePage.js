@@ -43,8 +43,8 @@ class UpdatePage extends Component {
     render() {
         return (
             <div>
-                <table>
-                    <tbody><tr><td><p>Change a word's genre to: {this.state.genre}</p></td>
+                <table className="update">
+                    <tbody><tr className="update1"><td><p>Change a word's genre to: {this.state.genre}</p></td>
                     <td>
                             <div className="dropdown">
                             <button className="dropbtn">Set Genre</button>
@@ -55,10 +55,9 @@ class UpdatePage extends Component {
                             </div>
                         </div></td></tr>
 
-                        <tr><td><input type="text" onChange={this.changeValue} /></td>
-                            <td>
+                        <tr><td><input className="input" type="text" onChange={this.changeValue} />
 
-                                <button onClick={this.updateWord}>Get Word</button></td></tr></tbody>
+                                <button className="dropbtn" onClick={this.updateWord}>Change Genre</button></td></tr></tbody>
 
 
                 </table>
