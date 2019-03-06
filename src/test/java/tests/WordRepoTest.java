@@ -22,7 +22,7 @@ import persist.repo.WordRepo;
 import util.JSONUtil;
 
 @RunWith(MockitoJUnitRunner.class)
-public class WordRepoTests {
+public class WordRepoTest {
 	
 	private static final String MOCK_OBJECT = "{\"id\":1,\"word\":\"Heroic\",\"category\":\"Adjective\",\"genre\":\"Common\"}";
 
