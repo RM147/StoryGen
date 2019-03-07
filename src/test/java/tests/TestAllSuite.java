@@ -18,6 +18,6 @@ import org.junit.runners.Suite.SuiteClasses;
 	WordRepoTest.class,
 	UserRepoTest.class,
 })
-public class AllTestSuite {
+public class TestAllSuite {
 
 }

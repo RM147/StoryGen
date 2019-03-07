@@ -99,12 +99,16 @@
     width: 150px;
 }
 
+.CRUD:disabled{
+  background-color: rgb(198,0,30,0.5);
+}
+
 .users {
   width: 100%;
 }
 
 .users1 {
-  height: 150px;
+  height: 200px;
 }
 
 tr:nth-child(3){
@@ -134,11 +138,9 @@ td{
 }
 
 .update{
-  width: 100%;
-  
+  width: 100%;  
 }
 
 .update1{
-  height: 150px;
-  
+  height: 150px;  
 }
