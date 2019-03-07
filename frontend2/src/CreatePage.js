@@ -99,7 +99,7 @@ class CreatePage extends Component {
                             </td>
                         </tr>
                         <tr>
-                            <input type="text" onChange={this.changeValue} />
+                            <input className="input" type="text" onChange={this.changeValue} />
                             <button className="dropbtn" onClick={this.addWord}>Make Word</button>
                         </tr>
                     </tbody>
