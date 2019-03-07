@@ -27,7 +27,7 @@ class UserPage extends Component {
 
     addUser = () => {
 
-        this.state.id++;
+        this.setState({ id: this.state.id + 1 })
 
         axios.post(`http://localhost:8080/StoryGen/api/users/addUser`, {
             "username": this.state.user,

@@ -78,7 +78,7 @@ public class UserRepo implements UserInterface {
 	@Transactional(REQUIRED)
 	public String deleteUser(Long id) {
 		if (manager.contains(manager.find(Users.class, id))) {
-			String str = manager.find(Users.class, id).getUsername() + " successfully deleted.";
+			String str = manager.find(Users.class, id).getUsername() + " successfully logged out.";
 			manager.remove(manager.find(Users.class, id));
 			return str;
 		}

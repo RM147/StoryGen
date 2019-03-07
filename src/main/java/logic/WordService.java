@@ -19,8 +19,12 @@ public class WordService implements ServiceInterface {
 
 	@Override
 	public String readWord(Long id) {
-
+		if(repo.readWord(id).equals("null")) {
+			return "{\"word\":\"No such word\",\"genre\":\"\"}";
+		}		
 		return repo.readWord(id);
+
+		
 	}
 
 	@Override

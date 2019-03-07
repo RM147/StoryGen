@@ -57,7 +57,7 @@ public class WordRepo implements RepoInterface {
 	public String updateWord(String genre, Long id) {
 		if (manager.contains(manager.find(Word.class, id))) {
 			manager.find(Word.class, id).setGenre(genre);
-			return manager.find(Word.class, id).getWord() + "'s genre has been changed to ";
+			return manager.find(Word.class, id).getWord() + "'s genre has been changed to "+genre+".";
 		}
 		return "No such word.";
 

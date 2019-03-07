@@ -23,7 +23,7 @@ class UpdatePage extends Component {
 
             this.state.genre
         )
-            .then(r => this.setState({ data: r.data + this.state.genre + "." }))
+            .then(r => this.setState({ data: r.data }))
             .catch(e => console.log(e));
 
     }
@@ -44,7 +44,8 @@ class UpdatePage extends Component {
         return (
             <div>
                 <table className="update">
-                    <tbody><tr className="update1"><td><p>Change a word's genre to: {this.state.genre}</p></td>
+                    <tbody><tr><p className={"loginText"+this.props.loggedin}>LOGIN TO USE THIS FUNCTION! </p></tr>
+                        <tr className="update1"><td><p>Change a word's genre to: {this.state.genre}</p></td>
                     <td>
                             <div className="dropdown">
                             <button className="dropbtn">Set Genre</button>
@@ -68,6 +69,7 @@ class UpdatePage extends Component {
                 <div>
 
                     <p>{this.state.data}</p>
+                    <p>{this.props.loggedin}</p>
                 </div>
             </div>
 

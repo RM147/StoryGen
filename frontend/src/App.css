@@ -62,6 +62,10 @@
   background-color: #3e8e41;
 }
 
+.dropbtn:disabled{
+  display:none;
+}
+
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
   }
@@ -92,15 +96,15 @@
 .CRUD{
     background-color: rgb(198,0,30);
     color: rgb(145,200,255);
-    padding: 16px;
+    padding: 7.25px;
     font-size: 16px;
     border: none;
     cursor: pointer;
-    width: 150px;
+    width: 200px;
 }
 
 .CRUD:disabled{
-  background-color: rgb(198,0,30,0.5);
+  display: none;
 }
 
 .users {
@@ -109,10 +113,6 @@
 
 .users1 {
   height: 200px;
-}
-
-tr:nth-child(3){
-  height: 150px;
 }
 
 td{
@@ -137,10 +137,23 @@ td{
   font-size: 18px;
 }
 
+.input:disabled{
+  display: none;
+}
+
 .update{
   width: 100%;  
 }
 
 .update1{
   height: 150px;  
+}
+
+.loginText0{
+  color: black;
+  
+}
+
+.loginText1{
+  display: none;
 }

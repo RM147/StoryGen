@@ -27,13 +27,18 @@ class ReadPage extends Component {
     render() {
         return (
             <div>
-                <table></table>
+                <div>
+                <table><tr><p className={"loginText"+this.props.loggedin}>LOGIN TO USE THIS FUNCTION! </p></tr></table>
                 <p>Type a number to get a word</p>
                 <input className="input" type="text" onChange={this.changeValue} />
                 <button className="dropbtn" onClick={this.getWord}>Get Word</button>
                 <p>Word: {this.state.data.word}</p>
                 <p>Genre: {this.state.data.genre}</p>
+                <p>{this.props.loggedin}</p>
             </div>
+            <div className={"loginText"+this.props.loggedin}>LOGIN TO USE THIS FUNCTION!</div>
+            </div>
+            
 
 
         );
