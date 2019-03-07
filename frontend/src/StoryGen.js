@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 
-class Create extends Component {
+class StoryGen extends Component {
     render() {
         return (
-            <button className="Nav">Create</button>
+            <button className="Nav">Story Gen</button>
 
         );
     }
 }
 
-export default Create;
+export default StoryGen;

@@ -62,33 +62,60 @@ class CreatePage extends Component {
     render() {
         return (
             <div>
-                <p>Want to add a word?</p>
-                <p>Type your word in the box and pick it's word type and genre from the menus.</p>
-                <div className="dropdown">
-                    <button className="dropbtn">Set Genre</button>
-                    <div className="dropdown-content">
-                        <button onClick={this.makeFantasy}>Fantasy</button>
-                        <button onClick={this.makeHorror}>Horror</button>
-                        <button onClick={this.makeScifi}>Scifi</button>
-                    </div>
-                </div>
 
-                <div className="dropdown">
-                    <button className="dropbtn">Set Category</button>
-                    <div className="dropdown-content">
-                        <button onClick={this.makeAdj}>Adjective</button>
-                        <button onClick={this.makePerson}>Person</button>
-                        <button onClick={this.makeSetting}>Setting</button>
-                        <button onClick={this.makeVerb}>Verb</button>
-                    </div>
-                </div>
-                <br/>
-                <input type="text" onChange={this.changeValue} />
-                <button onClick={this.addWord}>Make Word</button>
-                <p>Your word will be: {this.state.value}</p>
-                <p>Its genre will be: {this.state.genre}</p>
-                <p>Its category will be: {this.state.category}</p>
-                <p>{this.state.data}</p>
+                <table>
+                    <tbody>
+                        <tr><p className={"loginText"+this.props.loggedin}>LOGIN TO USE THIS FUNCTION! </p></tr>
+                        <tr className="create1">
+                            <td><p>Want to add a word?</p></td>
+                            <td>
+                                <div className="dropdown">
+                                    <button className="dropbtn">Set Genre</button>
+                                    <div className="dropdown-content">
+                                        <button onClick={this.makeFantasy}>Fantasy</button>
+                                        <button onClick={this.makeHorror}>Horror</button>
+                                        <button onClick={this.makeScifi}>Scifi</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div className="dropdown">
+                                    <button className="dropbtn">Set Category</button>
+                                    <div className="dropdown-content">
+                                        <button onClick={this.makeAdj}>Adjective</button>
+                                        <button onClick={this.makePerson}>Person</button>
+                                        <button onClick={this.makeSetting}>Setting</button>
+                                        <button onClick={this.makeVerb}>Verb</button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr disabled={!this.props.loggedin}>
+
+                            <td>
+
+                                <p>Your word will be: {this.state.value}</p>
+                                <p>Its genre will be: {this.state.genre}</p>
+                                <p>Its category will be: {this.state.category}</p>
+                                <p>{this.state.data}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <input className="input" type="text" onChange={this.changeValue} disabled={!this.props.loggedin} />
+                            <button className="dropbtn" onClick={this.addWord} disabled={!this.props.loggedin}>Make Word</button>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                
+
+
+
+
+
+
             </div>
 
         );

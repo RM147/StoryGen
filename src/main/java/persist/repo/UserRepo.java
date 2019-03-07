@@ -53,12 +53,15 @@ public class UserRepo implements UserInterface {
 		return util.getJSONForObject(manager.find(Users.class, id));
 
 	}
-
-	public String readUser(Long id, String user, String pass) {
-		Users aUser = (manager.find(Users.class, id));
-		if (aUser.getUsername().equals(user) && aUser.getSecretCode().equals(pass)) {
-		}
-		return "Success";
+	@Override
+	public String login(String user, String pass) {
+		
+		Query query = manager
+				.createQuery("Select u.id FROM Users u WHERE username=\'"+user+"\' AND secretCode=\'"+pass+" ORDER BY rand()");
+		if(query.getResultList().size()>0) {
+			return "Success";
+		}return "Failure";
+		
 	}
 
 	@Override
@@ -75,7 +78,7 @@ public class UserRepo implements UserInterface {
 	@Transactional(REQUIRED)
 	public String deleteUser(Long id) {
 		if (manager.contains(manager.find(Users.class, id))) {
-			String str = manager.find(Users.class, id).getUsername() + " successfully deleted.";
+			String str = manager.find(Users.class, id).getUsername() + " successfully logged out.";
 			manager.remove(manager.find(Users.class, id));
 			return str;
 		}

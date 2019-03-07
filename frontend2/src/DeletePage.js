@@ -27,6 +27,7 @@ class DeletePage extends Component {
     render() {
         return (
             <div>
+                <table></table>
                 <p>Type a number to delete a word</p>
                 <input type="text" onChange={this.changeValue}/>
                 <button onClick={this.deleteWord}>Delete</button>

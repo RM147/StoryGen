@@ -18,13 +18,13 @@ public class GeneratorService implements GeneratorInterface {
 	}
 
 	@Override
-	public String genNoun() {
-		return repo.genNoun();
+	public String genNoun(String genre) {
+		return repo.genNoun(genre);
 	}
 
 	@Override
-	public String genSetting() {
-		return repo.genSetting();
+	public String genSetting(String genre) {
+		return repo.genSetting(genre);
 	}
 
 	@Override
@@ -33,8 +33,8 @@ public class GeneratorService implements GeneratorInterface {
 	}
 
 	@Override
-	public String genStory() {
-		return repo.genStory();
+	public String genStory(String genre) {
+		return repo.genStory(genre);
 	}
 
 	public void setRepo(GenRepoInterface repo) {

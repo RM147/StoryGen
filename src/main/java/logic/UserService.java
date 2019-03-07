@@ -18,7 +18,15 @@ public class UserService implements UserServiceInterface{
 
 	@Override
 	public String readUser(Long id) {
+		if(repo.readUser(id).equals("null")) {
+			return "No such user";
+		}		
 		return repo.readUser(id);
+	}
+	
+	@Override
+	public String login(String user, String pass) {
+		return repo.login(user, pass);
 	}
 
 	@Override
@@ -34,5 +42,7 @@ public class UserService implements UserServiceInterface{
 	public void setRepo(UserInterface repo) {
 		this.repo = repo;
 	}
+
+	
 
 }

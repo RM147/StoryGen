@@ -20,7 +20,7 @@
 .Nav{
   float: left;
   background-color: rgb(198,0,30);
-  width:16.65%;
+  width: 16.65%;
   height: 70px;
   color: rgb(145,200,255);
   font-size: 16px;
@@ -28,9 +28,6 @@
 
 .Nav:hover{
   background-color: rgb(102, 2, 2);
-}
-.Home{
-  background-color: goldenrod;
 }
 
 .Output{
@@ -42,7 +39,7 @@
 .Output2{
   background-color: white;
   color: black;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .dropdown{
@@ -57,6 +54,10 @@
     border: none;
     cursor: pointer;
     width: 150px;
+}
+
+.dropbtn:hover {
+  background-color: #3e8e41;
 }
 
 .dropdown:hover .dropbtn {
@@ -94,4 +95,38 @@
     border: none;
     cursor: pointer;
     width: 150px;
+}
+
+.users {
+  width: 100%;
+}
+
+.users1 {
+  height: 200px;
+}
+
+tr:nth-child(3){
+  height: 200px;
+}
+
+td{
+  text-align: center;
+  vertical-align: top;
+}
+
+.create1 {
+  height: 270px;
+}
+
+.out1 {
+  width: 100%;
+}
+
+.out2 {
+  width: 30%;
+}
+
+.input {
+  height: 42px;
+  font-size: 20px;
 }

@@ -29,6 +29,13 @@ public class UserPaths {
 		return service.readUser(id);
 	}
 	
+	@Path("/login")
+	@POST
+	@Produces({ "application/json" })
+	public String login(String user, String pass) {
+		return service.login(user, pass);
+	}
+	
 	@Path("/addUser")
 	@POST
 	@Produces({ "application/json" })

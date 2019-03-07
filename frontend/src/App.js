@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Banner from './Banner';
-import Login from './Login';
 import Routing from './Router';
 
 class App extends Component {
@@ -10,7 +9,7 @@ class App extends Component {
       <div>
         <div className='grid-container'>
           <div className="Banner"><Banner/></div>
-          <div className="Login"><Login /></div>
+          <div className="Login"></div>
         </div>
         
         <Routing></Routing>

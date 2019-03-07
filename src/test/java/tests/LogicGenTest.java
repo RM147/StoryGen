@@ -45,14 +45,14 @@ public class LogicGenTest {
 	
 	@Test
 	public void testGenNoun() {
-		Mockito.when(service.genNoun()).thenReturn(MOCK);
-		assertEquals(MOCK,service.genNoun());
+		Mockito.when(service.genNoun("")).thenReturn(MOCK);
+		assertEquals(MOCK,service.genNoun(""));
 	}
 	
 	@Test
 	public void testGenSetting() {
-		Mockito.when(service.genSetting()).thenReturn(MOCK);
-		assertEquals(MOCK,service.genSetting());
+		Mockito.when(service.genSetting("")).thenReturn(MOCK);
+		assertEquals(MOCK,service.genSetting(""));
 	}
 	
 	@Test
@@ -63,8 +63,8 @@ public class LogicGenTest {
 	
 	@Test
 	public void testGenStory() {
-		Mockito.when(service.genStory()).thenReturn(MOCK);
-		assertEquals(MOCK,service.genStory());
+		Mockito.when(service.genStory("")).thenReturn(MOCK);
+		assertEquals(MOCK,service.genStory(""));
 	}
 
 }
