@@ -56,9 +56,9 @@ class UpdatePage extends Component {
                             </div>
                         </div></td></tr>
 
-                        <tr><td><input className="input" type="text" onChange={this.changeValue} />
+                        <tr><td><input className="input" type="text" onChange={this.changeValue} disabled={!this.props.loggedin}/>
 
-                                <button className="dropbtn" onClick={this.updateWord}>Change Genre</button></td></tr></tbody>
+                                <button className="dropbtn" onClick={this.updateWord} disabled={!this.props.loggedin}>Change Genre</button></td></tr></tbody>
 
 
                 </table>
@@ -69,7 +69,7 @@ class UpdatePage extends Component {
                 <div>
 
                     <p>{this.state.data}</p>
-                    <p>{this.props.loggedin}</p>
+                   
                 </div>
             </div>
 

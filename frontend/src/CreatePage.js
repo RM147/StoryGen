@@ -109,7 +109,7 @@ class CreatePage extends Component {
                 </table>
 
 
-                <p>{this.props.loggedin}</p>
+                
 
 
 

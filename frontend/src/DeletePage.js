@@ -29,10 +29,10 @@ class DeletePage extends Component {
             <div>
                 <table><tr><p className={"loginText"+this.props.loggedin}>LOGIN TO USE THIS FUNCTION! </p></tr></table>
                 <p>Type a number to delete a word</p>
-                <input className="input" type="text" onChange={this.changeValue}/>
-                <button className="dropbtn" onClick={this.deleteWord}>Delete</button>
+                <input className="input" type="text" onChange={this.changeValue} disabled={!this.props.loggedin}/>
+                <button className="dropbtn" onClick={this.deleteWord} disabled={!this.props.loggedin}>Delete</button>
                 <p>{this.state.data}</p>
-                <p>{this.props.loggedin}</p>
+                
                 
             </div>
 
