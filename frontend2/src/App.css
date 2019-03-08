@@ -15,6 +15,8 @@
 }
 .Login{  
   background-color: rgb(99,0,198);
+  background-image: url(https://thegraphicsfairy.com/wp-content/uploads/2016/07/Vintage-Open-Book-Image-GraphicsFairy.jpg);
+  background-size: cover;
 }
 
 .Nav{
@@ -49,7 +51,7 @@
 .dropbtn {
     background-color: rgb(99,0,198);
     color: rgb(145,200,255);
-    padding: 16px;
+    padding: 7.25px;
     font-size: 16px;
     border: none;
     cursor: pointer;
@@ -60,6 +62,10 @@
   background-color: #3e8e41;
 }
 
+.dropbtn:disabled{
+  display:none;
+}
+
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
   }
@@ -67,7 +73,7 @@
 .dropdown-content button {
     background-color: rgb(198,0,30);
     color: rgb(145,200,255);
-    padding: 16px;
+    padding: 7.25px;
     font-size: 16px;
     border: none;
     cursor: pointer;
@@ -90,11 +96,15 @@
 .CRUD{
     background-color: rgb(198,0,30);
     color: rgb(145,200,255);
-    padding: 16px;
+    padding: 7.25px;
     font-size: 16px;
     border: none;
     cursor: pointer;
-    width: 150px;
+    width: 200px;
+}
+
+.CRUD:disabled{
+  display: none;
 }
 
 .users {
@@ -105,17 +115,13 @@
   height: 200px;
 }
 
-tr:nth-child(3){
-  height: 200px;
-}
-
 td{
-  text-align: center;
+  text-align: left;
   vertical-align: top;
 }
 
 .create1 {
-  height: 270px;
+  height: 200px;
 }
 
 .out1 {
@@ -127,6 +133,27 @@ td{
 }
 
 .input {
-  height: 42px;
-  font-size: 20px;
+  height: 24.5px;
+  font-size: 18px;
+}
+
+.input:disabled{
+  display: none;
+}
+
+.update{
+  width: 100%;  
+}
+
+.update1{
+  height: 150px;  
+}
+
+.loginText0{
+  color: red;
+  
+}
+
+.loginText1{
+  display: none;
 }

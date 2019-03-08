@@ -62,8 +62,10 @@ class CreatePage extends Component {
     render() {
         return (
             <div>
+
                 <table>
                     <tbody>
+                        <tr><p className={"loginText"+this.props.loggedin}>LOGIN TO USE THIS FUNCTION! </p></tr>
                         <tr className="create1">
                             <td><p>Want to add a word?</p></td>
                             <td>
@@ -88,8 +90,8 @@ class CreatePage extends Component {
                                 </div>
                             </td>
                         </tr>
-                        <tr>
-                            
+                        <tr disabled={!this.props.loggedin}>
+
                             <td>
 
                                 <p>Your word will be: {this.state.value}</p>
@@ -99,11 +101,15 @@ class CreatePage extends Component {
                             </td>
                         </tr>
                         <tr>
-                            <input className="input" type="text" onChange={this.changeValue} />
-                            <button className="dropbtn" onClick={this.addWord}>Make Word</button>
+                            <input className="input" type="text" onChange={this.changeValue} disabled={!this.props.loggedin} />
+                            <button className="dropbtn" onClick={this.addWord} disabled={!this.props.loggedin}>Make Word</button>
+
                         </tr>
                     </tbody>
                 </table>
+
+
+                
 
 
 

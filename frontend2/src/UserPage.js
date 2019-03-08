@@ -9,9 +9,10 @@ class UserPage extends Component {
         this.state = {
             user: '',
             pass: '',
+            value: 'default',
             data: '',
-            data2: '',
-            id: 1
+
+
         };
     }
 
@@ -25,47 +26,57 @@ class UserPage extends Component {
 
     }
 
+    changeValue = (e) => {
+        this.setState({ value: e.target.value });
+
+    }
+
     addUser = () => {
 
-        this.setState({ id: this.state.id + 1 })
+        this.props.idRaise();
+        this.props.logIn();
+
 
         axios.post(`http://localhost:8080/StoryGen/api/users/addUser`, {
             "username": this.state.user,
             "secretCode": this.state.pass
-        }
-        )
+        })
             .then(r => this.setState({ data: r.data }))
             .catch(e => console.log(e));
-            
-        
+
+
+
+
 
     }
 
     getUser = () => {
-        axios.get(`http://localhost:8080/StoryGen/api/users/getUser/${this.state.id}`)
-            .then(r => this.setState({ data2: r.data }))
+        axios.get(`http://localhost:8080/StoryGen/api/users/getUser/${this.props.id}`)
+            .then(r => this.setState({ data: "Username: " + r.data.username }))
             .catch(e => console.log(e));
-        
+
 
     }
 
     updateUser = () => {
-        axios.put(`http://localhost:8080/StoryGen/api/users/updateUser/${this.state.id}`,
+        axios.put(`http://localhost:8080/StoryGen/api/users/updateUser/${this.props.id}`,
 
-            "pass"
+            this.state.value
         )
             .then(r => this.setState({ data: r.data }))
             .catch(e => console.error(e));
-        
+
 
     }
 
     deleteUser = () => {
-        axios.delete(`http://localhost:8080/StoryGen/api/users/deleteUser/${this.state.id}`)
+
+        this.props.logOut();
+
+        axios.delete(`http://localhost:8080/StoryGen/api/users/deleteUser/${this.props.id}`)
             .then(r => this.setState({ data: r.data }))
             .catch(e => console.log(e));
-        
-
+        this.setState({ loggedin: false })
     }
 
     render() {
@@ -73,43 +84,33 @@ class UserPage extends Component {
             <div>
                 <table className="users">
                     <tbody>
-                    <tr className="users1">
-                        <td colSpan="3">
-                            <div><label htmlFor="name">Username: </label>
-                                <input id="name" type="text" onChange={this.changeUser} /></div>
-                            <div><label htmlFor="pass">Password: </label>
-                                <input id="pass" type="text" onChange={this.changePass} /></div>
-                                <br/>
-                            <button onClick={this.addUser} className="CRUD">Sign Up</button></td>
-                        <td colSpan="3"><div><label htmlFor="name">Username: </label>
-                            <input id="name" type="text" onChange={this.changeUser} /></div>
-                            <div><label htmlFor="pass">Password: </label>
-                                <input id="pass" type="text" onChange={this.changePass} /></div>
-                                <br/>
-                            <button onClick={this.addUser} className="CRUD">Login</button></td>
+                        <tr className="users1">
+                            <td colSpan="3">
+                                <div><label htmlFor="name">Username: </label>
+                                    <input id="name" type="text" onChange={this.changeUser} /></div>
+                                <div><label htmlFor="pass">Password: </label>
+                                    <input id="pass" type="password" onChange={this.changePass} /></div>
+                                <br />
+                                <button onClick={this.addUser} className="CRUD">Sign Up</button></td>
+                        </tr>
+                        <tr className="users2">
+                            <td colSpan="2"><button disabled={!this.props.loggedin} onClick={this.getUser} className="CRUD">See Details</button></td>
+                            <td colSpan="2"><input className="input" type="password" onChange={this.changeValue} disabled={!this.props.loggedin} />
+                                <button disabled={!this.props.loggedin} onClick={this.updateUser} className="CRUD">Change Password</button></td>
+                            <td colSpan="2"><button disabled={!this.props.loggedin} onClick={this.deleteUser} className="CRUD">Log out</button></td>
 
-                    </tr>
-                    <tr className="users1">
-                        <td colSpan="2"><button onClick={this.getUser} className="CRUD">See Details</button></td>
-                        <td colSpan="2"><button onClick={this.updateUser} className="CRUD">Update User</button></td>
-                        <td colSpan="2"><button onClick={this.deleteUser} className="CRUD">Delete User</button></td>
+                        </tr>
+                        <tr className="users2">
+                            <td colSpan="6">
+                                <p>{this.state.data}</p>
 
-                    </tr>
-                    <tr className="users1">
-                        <td colSpan="6">
-                            <p>{this.state.id}</p>
-                            <p>{this.state.pass}</p>
-                            <p>{this.state.data}</p>
-                            <p>{this.state.data2.username}</p>
-                            <p>{this.state.data2.secretCode}</p></td>
 
-                    </tr>
+                            </td>
+
+                        </tr>
                     </tbody>
 
                 </table>
-
-
-
 
             </div>
 
