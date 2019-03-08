@@ -15,7 +15,7 @@ class CreatePage extends Component {
     }
 
     addWord = () => {
-        axios.post(`http://localhost:8080/StoryGen/api/word/addWord`, {
+        axios.post(`http://34.76.106.13:8888/StoryGen/api/word/addWord`, {
 
             "word": this.state.value,
             "category": this.state.category,

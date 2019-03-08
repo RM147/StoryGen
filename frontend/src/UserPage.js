@@ -37,7 +37,7 @@ class UserPage extends Component {
         this.props.logIn();
 
 
-        axios.post(`http://localhost:8080/StoryGen/api/users/addUser`, {
+        axios.post(`http://34.76.106.13:8888/StoryGen/api/users/addUser`, {
             "username": this.state.user,
             "secretCode": this.state.pass
         })
@@ -51,7 +51,7 @@ class UserPage extends Component {
     }
 
     getUser = () => {
-        axios.get(`http://localhost:8080/StoryGen/api/users/getUser/${this.props.id}`)
+        axios.get(`http://34.76.106.13:8888/StoryGen/api/users/getUser/${this.props.id}`)
             .then(r => this.setState({ data: "Username: " + r.data.username }))
             .catch(e => console.log(e));
 
@@ -59,7 +59,7 @@ class UserPage extends Component {
     }
 
     updateUser = () => {
-        axios.put(`http://localhost:8080/StoryGen/api/users/updateUser/${this.props.id}`,
+        axios.put(`http://34.76.106.13:8888/StoryGen/api/users/updateUser/${this.props.id}`,
 
             this.state.value
         )
@@ -73,7 +73,7 @@ class UserPage extends Component {
 
         this.props.logOut();
 
-        axios.delete(`http://localhost:8080/StoryGen/api/users/deleteUser/${this.props.id}`)
+        axios.delete(`http://34.76.106.13:8888/StoryGen/api/users/deleteUser/${this.props.id}`)
             .then(r => this.setState({ data: r.data }))
             .catch(e => console.log(e));
         this.setState({ loggedin: false })

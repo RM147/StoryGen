@@ -19,7 +19,7 @@ class UpdatePage extends Component {
     }
 
     updateWord = () => {
-        axios.put(`http://localhost:8080/StoryGen/api/word/updateWord/${this.state.value}`,
+        axios.put(`http://34.76.106.13:8888/StoryGen/api/word/updateWord/${this.state.value}`,
 
             this.state.genre
         )

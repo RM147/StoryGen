@@ -18,7 +18,7 @@ class ReadPage extends Component {
     }
 
     getWord = () => {
-        axios.get(`http://localhost:8080/StoryGen/api/word/getWord/${this.state.value}`)
+        axios.get(`http://34.76.106.13:8888/StoryGen/api/word/getWord/${this.state.value}`)
             .then(r => this.setState({ data: r.data }))
             .catch(e => console.log(e));
 

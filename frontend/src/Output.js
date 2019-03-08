@@ -29,7 +29,7 @@ class Output extends Component {
     }
 
     genStory = () => {
-        axios.get(`http://localhost:8080/StoryGen/api/word/storygen/${this.state.genre}`)
+        axios.get(`http://34.76.106.13:8888/StoryGen/api/word/storygen/${this.state.genre}`)
             .then(r => this.setState({ value: r.data }))
             .catch(e => console.log(e));
         

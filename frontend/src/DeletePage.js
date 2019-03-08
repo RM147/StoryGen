@@ -18,7 +18,7 @@ class DeletePage extends Component {
     }
 
     deleteWord = () => {
-        axios.delete(`http://localhost:8080/StoryGen/api/word/deleteWord/${this.state.value}`)
+        axios.delete(`http://34.76.106.13:8888/StoryGen/api/word/deleteWord/${this.state.value}`)
         .then(r => this.setState({ data: r.data }))
         .catch(e => console.log(e));
         
