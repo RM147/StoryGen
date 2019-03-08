@@ -28,7 +28,7 @@ class ReadPage extends Component {
         return (
             <div>
                 <div>
-                    <table><tr><p className={"loginText" + this.props.loggedin}>LOGIN TO USE THIS FUNCTION! </p></tr></table>
+                    <table><tr></tr></table>
                     <p>Type a number to get a word</p>
                     <input className="input" type="text" onChange={this.changeValue} />
                     <button className="dropbtn" onClick={this.getWord}>Get Word</button>
