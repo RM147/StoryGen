@@ -53,17 +53,7 @@ public class UserRepo implements UserInterface {
 		return util.getJSONForObject(manager.find(Users.class, id));
 
 	}
-	@Override
-	public String login(String user, String pass) {
-		
-		Query query = manager
-				.createQuery("Select u.id FROM Users u WHERE username=\'"+user+"\' AND secretCode=\'"+pass+" ORDER BY rand()");
-		if(query.getResultList().size()>0) {
-			return "Success";
-		}return "Failure";
-		
-	}
-
+	
 	@Override
 	@Transactional(REQUIRED)
 	public String updateUser(String pass, Long id) {

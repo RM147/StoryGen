@@ -44,13 +44,6 @@ public class GenRepo implements GenRepoInterface {
 		return adj;
 	}
 	
-	public String genNoun() {
-		Query query = manager
-				.createQuery("Select w.word FROM Word w WHERE category=\'Person\' ORDER BY rand()");
-		String noun = query.setMaxResults(1).getResultList().toString();
-		return noun;
-	}
-	
 	@Override
 	public String genNoun(String genre) {
 		if(genre.equals("All")) {
@@ -66,13 +59,6 @@ public class GenRepo implements GenRepoInterface {
 		return noun;
 	}
 
-	public String genSetting() {
-		Query query = manager.createQuery(
-				"Select w.word FROM Word w WHERE category=\'Setting\' ORDER BY rand()");
-		String setting = query.setMaxResults(1).getResultList().toString();
-		return setting;
-	}
-	
 	@Override
 	public String genSetting(String genre) {
 		if(genre.equals("All")) {

@@ -64,7 +64,7 @@ public class WordGenRepoTest {
 		Mockito.when(query.setMaxResults(1)).thenReturn(query);
 		Mockito.when(query.getResultList()).thenReturn(adj);
 		Mockito.when(query.toString()).thenReturn("word");
-		assertEquals(MOCK_LIST, repo.genNoun());
+		assertEquals(MOCK_LIST, repo.genNoun(""));
 	}
 	
 	@Test
@@ -75,7 +75,7 @@ public class WordGenRepoTest {
 		Mockito.when(query.setMaxResults(1)).thenReturn(query);
 		Mockito.when(query.getResultList()).thenReturn(adj);
 		Mockito.when(query.toString()).thenReturn("word");
-		assertEquals(MOCK_LIST, repo.genSetting());
+		assertEquals(MOCK_LIST, repo.genSetting(""));
 	}
 	
 	@Test

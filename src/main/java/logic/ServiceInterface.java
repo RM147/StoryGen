@@ -1,7 +1,5 @@
 package logic;
 
-import java.util.List;
-
 public interface ServiceInterface {
 
 	String addWord(String word);

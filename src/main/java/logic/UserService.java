@@ -25,11 +25,6 @@ public class UserService implements UserServiceInterface{
 	}
 	
 	@Override
-	public String login(String user, String pass) {
-		return repo.login(user, pass);
-	}
-
-	@Override
 	public String updateUser(String pass, Long id) {
 		return repo.updateUser(pass, id);
 	}

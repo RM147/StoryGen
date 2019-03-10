@@ -10,6 +10,4 @@ public interface UserServiceInterface {
 
 	String deleteUser(Long id);
 	
-	String login(String user, String pass);
-
 }
